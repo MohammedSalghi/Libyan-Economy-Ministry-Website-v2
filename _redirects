@@ -1,0 +1,5 @@
+# Netlify _redirects
+# Handles 404 pages gracefully — shows index for unknown paths
+
+# If a path is not found, serve index.html with a 404 status
+/*    /index.html   404

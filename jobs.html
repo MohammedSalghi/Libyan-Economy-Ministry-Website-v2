@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline-variant": "#d3c4b4", "primary-container": "#c49753", "on-tertiary-fixed-variant": "#005047", "header-charcoal": "#212427", "primary-fixed": "#ffddb1", "outline": "#817567", "surface-dim": "#d8dade", "on-secondary": "#ffffff", "surface-bright": "#f8f9fd", "gov-blue-dark": "#005B9A", "surface-variant": "#e1e2e6", "primary-fixed-dim": "#efbe76", "on-secondary-fixed-variant": "#00497d", "gold-accent": "#C49753", "surface-muted": "#F2F4F7", "on-surface": "#191c1f", "text-secondary": "#667085", "on-secondary-container": "#00497e", "tertiary-container": "#41af9f", "error": "#ba1a1a", "on-primary": "#ffffff", "on-tertiary-container": "#003d36", "header-darker": "#181A1B", "on-tertiary-fixed": "#00201c", "tertiary-fixed": "#8bf5e3", "on-error-container": "#93000a", "on-surface-variant": "#4f4539", "text-primary": "#1E293B", "surface": "#f8f9fd", "border-subtle": "#E2E8F0", "secondary-fixed-dim": "#9ecaff", "surface-container-low": "#f2f3f7", "primary": "#7c5719", "surface-subtle": "#F8FAFC", "tertiary": "#006b5f", "inverse-on-surface": "#eff1f5", "on-error": "#ffffff", "secondary": "#1161a0", "on-secondary-fixed": "#001d36", "background": "#f8f9fd", "surface-bg": "#FFFFFF", "on-background": "#191c1f", "surface-tint": "#7c5719", "inverse-surface": "#2e3134", "error-container": "#ffdad6", "on-primary-fixed-variant": "#614001", "gov-blue-light": "#0078A8", "on-tertiary": "#ffffff", "surface-container-highest": "#e1e2e6", "tertiary-fixed-dim": "#6ed8c7", "gov-blue-tint": "#EEF5FF", "secondary-fixed": "#d1e4ff", "teal-accent": "#008C7D", "inverse-primary": "#efbe76", "teal-light": "#11A99B", "on-primary-fixed": "#291800", "surface-container-lowest": "#ffffff", "surface-container": "#eceef2", "gold-light": "#D0AC75", "border-light": "#E5E5E5", "secondary-container": "#7dbaff", "surface-container-high": "#e7e8ec", "on-primary-container": "#4b3100" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "container-max": "80rem", "space-lg": "1.5rem", "gutter-mobile": "1rem", "space-sm": "0.75rem", "gutter-desktop": "1.5rem", "space-2xs": "0.25rem", "space-md": "1rem", "space-xl": "2rem", "space-3xl": "4rem", "space-2xl": "3rem", "space-xs": "0.5rem" }, "fontFamily": { "headline-xl": [ "Cairo" ], "body-lg": [ "Cairo" ], "headline-sm": [ "Cairo" ], "body-sm": [ "Cairo" ], "label-md": [ "Cairo" ], "label-sm": [ "Cairo" ], "headline-xl-mobile": [ "Cairo" ], "display-hero": [ "Cairo" ], "display-hero-mobile": [ "Cairo" ], "label-lg": [ "Cairo" ], "body-md": [ "Cairo" ], "headline-md": [ "Cairo" ], "headline-lg": [ "Cairo" ] }, "fontSize": { "headline-xl": [ "36px", { "lineHeight": "52px", "fontWeight": "700" } ], "body-lg": [ "18px", { "lineHeight": "30px", "fontWeight": "400" } ], "headline-sm": [ "18px", { "lineHeight": "28px", "fontWeight": "600" } ], "body-sm": [ "14px", { "lineHeight": "22px", "fontWeight": "400" } ], "label-md": [ "13px", { "lineHeight": "18px", "fontWeight": "500" } ], "label-sm": [ "11px", { "lineHeight": "16px", "fontWeight": "500" } ], "headline-xl-mobile": [ "26px", { "lineHeight": "38px", "fontWeight": "700" } ], "display-hero": [ "48px", { "lineHeight": "68px", "fontWeight": "800" } ], "display-hero-mobile": [ "32px", { "lineHeight": "46px", "fontWeight": "800" } ], "label-lg": [ "15px", { "lineHeight": "22px", "fontWeight": "600" } ], "body-md": [ "16px", { "lineHeight": "26px", "fontWeight": "400" } ], "headline-md": [ "22px", { "lineHeight": "34px", "fontWeight": "600" } ], "headline-lg": [ "28px", { "lineHeight": "42px", "fontWeight": "700" } ] } } } };</script><style>
+  /* Header layout fix: responsive nav scaling */
+  .site-header-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .site-header-branding {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+    min-width: 0;
+  }
+  .site-header-nav-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    min-width: 0;
+    flex-shrink: 1;
+    flex-wrap: nowrap;
+  }
+  .site-header-desktop-links {
+    display: none;
+    align-items: center;
+    gap: 0.75rem;
+    white-space: nowrap;
+    flex-shrink: 1;
+    min-width: 0;
+    position: relative;
+  }
+  @media (min-width: 1024px) {
+    .site-header-desktop-links {
+      display: flex;
+    }
+  }
+  /* Graceful scaling at different desktop widths */
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .site-header-desktop-links {
+      gap: 0.35rem;
+    }
+    .site-header-desktop-links > a,
+    .site-header-desktop-links > div > button {
+      font-size: 0.75rem;
+      padding-left: 0.125rem;
+      padding-right: 0.125rem;
+    }
+    .site-header-branding h2 {
+      font-size: 0.95rem;
+    }
+  }
+  @media (min-width: 1280px) and (max-width: 1365px) {
+    .site-header-desktop-links {
+      gap: 0.5rem;
+    }
+    .site-header-desktop-links > a,
+    .site-header-desktop-links > div > button {
+      font-size: 0.8125rem;
+    }
+  }
+  @media (min-width: 1366px) {
+    .site-header-desktop-links {
+      gap: 1rem;
+    }
+    .site-header-branding {
+      gap: 1.25rem;
+    }
+  }
+</style>
+</head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="site-header-main bg-white border-b border-gray-100 shadow-sm px-4 lg:px-6 py-3 relative z-[100] sticky top-0 w-full rounded-b-xl gap-4 lg:gap-6">
+<!-- Logo / Right Side -->
+<div class="site-header-branding text-[#181510]">
+<a href="index.html" class="flex items-center shrink-0">
+<img src="logo.png.jpeg" alt="شعار وزارة الاقتصاد والتجارة" class="h-12 w-auto object-contain" />
+</a>
+<h2 class="text-gray-900 text-lg sm:text-xl font-extrabold leading-tight tracking-tight hidden sm:block">وزارة الاقتصاد والتجارة</h2>
+<h2 class="text-gray-900 text-lg font-extrabold leading-tight tracking-tight sm:hidden">وزارة الاقتصاد</h2>
+</div>
+
+<!-- Desktop Navigation & Action Buttons -->
+<div class="site-header-nav-actions">
+  <!-- Desktop Links -->
+  <div class="site-header-desktop-links relative z-[110]">
+    <a class="text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors border-b-2 border-transparent hover:border-gov-blue-dark pb-1" href="index.html">الرئيسية</a>
+    <a class="text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors border-b-2 border-transparent hover:border-gov-blue-dark pb-1" href="about.html">عن الوزارة</a>
+    
+    <!-- Dropdown: الخدمات الرقمية -->
+    <div class="group relative inline-block pb-1">
+      <button class="flex items-center gap-1 text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors focus:outline-none">
+        الخدمات الرقمية
+        <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+      </button>
+      <div class="absolute right-0 mt-4 w-56 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden transform origin-top-right group-hover:scale-100 scale-95 ring-1 ring-black ring-opacity-5">
+        <a href="services.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">الخدمات الإلكترونية</a>
+        <a href="tenders.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">العطاءات</a>
+        <a href="jobs.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">وظائف شاغرة</a>
+        <a href="daily-prices.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">الأسعار اليومية</a>
+        <a href="reports.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors font-medium">التقارير الإحصائية</a>
+      </div>
+    </div>
+
+    <!-- Dropdown: التجارة والصناعة -->
+    <div class="group relative inline-block pb-1">
+      <button class="flex items-center gap-1 text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors focus:outline-none">
+        التجارة والصناعة
+        <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+      </button>
+      <div class="absolute right-0 mt-4 w-64 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden transform origin-top-right group-hover:scale-100 scale-95 ring-1 ring-black ring-opacity-5">
+        <a href="export-import.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">التصدير والاستيراد</a>
+        <a href="industrial-development.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">إدارة التنمية الصناعية</a>
+        <a href="agreements.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">الاتفاقيات الدولية</a>
+        <a href="commercial-agencies.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">الوكالات التجارية</a>
+        <a href="foreign-company-branch.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">فروع الشركات الأجنبية</a>
+        <a href="foreign-company-rep-office.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">مكاتب تمثيل الشركات الأجنبية</a>
+        <a href="foreign-companies-license.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors font-medium">رخص الشركات الأجنبية</a>
+      </div>
+    </div>
+
+    <!-- Dropdown: حماية المستهلك والعلامات -->
+    <div class="group relative inline-block pb-1">
+      <button class="flex items-center gap-1 text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors focus:outline-none">
+        حماية المستهلك
+        <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+      </button>
+      <div class="absolute right-0 mt-4 w-64 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden transform origin-top-right group-hover:scale-100 scale-95 ring-1 ring-black ring-opacity-5">
+        <a href="consumer-rights.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">الحقوق الثمانية للمستهلك</a>
+        <a href="codex-alimentarius.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">هيئة الدستور الغذائي</a>
+        <a href="trademark-registration.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">تسجيل العلامة التجارية</a>
+        <a href="trademark-ownership-transfer.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">انتقال ملكية العلامة</a>
+        <a href="products-services-classification.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">تصنيف المنتجات والخدمات</a>
+        <a href="trademark-documentary-cycle.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">الدورة المستندية للعلامات</a>
+        <a href="trademark-faq.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors font-medium">أسئلة شائعة - العلامات التجارية</a>
+      </div>
+    </div>
+
+    <!-- Dropdown: التشريعات -->
+    <div class="group relative inline-block pb-1">
+      <button class="flex items-center gap-1 text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors focus:outline-none">
+        التشريعات
+        <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+      </button>
+      <div class="absolute right-0 mt-4 w-56 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden transform origin-top-right group-hover:scale-100 scale-95 ring-1 ring-black ring-opacity-5">
+        <a href="laws.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">القوانين والقرارات</a>
+        <a href="industrial-regulation-law.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">قانون التنظيم الصناعي</a>
+        <a href="trademark-law.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors font-medium">قانون العلامة التجارية</a>
+      </div>
+    </div>
+
+    <a class="text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors border-b-2 border-transparent hover:border-gov-blue-dark pb-1" href="media.html">المركز الإعلامي</a>
+    <a class="text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors border-b-2 border-transparent hover:border-gov-blue-dark pb-1" href="contact.html">تواصل معنا</a>
+  </div>
+  
+  <div class="flex items-center gap-2">
+    <!-- Desktop Search Icon -->
+    <button class="hidden lg:flex items-center justify-center w-10 h-10 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gov-blue-dark transition-colors focus:outline-none">
+      <span class="material-symbols-outlined">search</span>
+    </button>
+    
+    <a href="services.html" class="hidden sm:flex min-w-[120px] items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gold-accent text-white hover:bg-gold-light text-sm font-bold tracking-[0.015em] transition-all shadow-md hover:shadow-lg">
+      <span class="truncate">الخدمات الإلكترونية</span>
+    </a>
+    
+    <!-- Mobile Menu Hamburger Button -->
+    <button id="mobileMenuBtn" class="flex lg:hidden items-center justify-center w-10 h-10 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors text-gray-700 focus:outline-none ml-1">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</div>
+
+<!-- Mobile Navigation Drawer Overlay (Hidden by Default) -->
+<div id="mobileMenuOverlay" class="fixed inset-0 bg-gray-900/40 backdrop-blur-sm z-[150] hidden opacity-0 transition-opacity duration-300"></div>
+
+<!-- Mobile Navigation Drawer (Hidden by Default) -->
+<div id="mobileMenuDrawer" class="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white z-[200] transform translate-x-full transition-transform duration-300 overflow-y-auto shadow-2xl flex flex-col rounded-l-2xl">
+  <div class="flex items-center justify-between p-5 border-b border-gray-100">
+    <div class="flex items-center gap-3">
+      <img src="logo.png.jpeg" alt="شعار وزارة الاقتصاد والتجارة" class="h-10 w-auto object-contain" />
+      <span class="font-extrabold text-sm text-gray-900">وزارة الاقتصاد والتجارة</span>
+    </div>
+    <button id="closeMobileMenuBtn" class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 hover:bg-gray-100 hover:text-gray-800 transition-colors focus:outline-none">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  
+  <div class="p-5 overflow-y-auto pb-20">
+    <!-- Mobile Search -->
+    <div class="flex w-full items-center rounded-xl h-12 mb-6 bg-gray-50 border border-gray-200 px-3">
+      <span class="material-symbols-outlined text-gray-400">search</span>
+      <input class="w-full bg-transparent border-none text-gray-800 focus:outline-none px-3 font-medium placeholder:text-gray-400 placeholder:font-normal text-sm" placeholder="ابحث هنا..." />
+    </div>
+
+    <nav class="flex flex-col gap-1">
+      <a href="index.html" class="px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الرئيسية</a>
+      <a href="about.html" class="px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">عن الوزارة</a>
+      
+      <!-- Mobile Dropdown: الخدمات الرقمية -->
+      <div class="flex flex-col">
+        <button class="mobile-dropdown-btn flex items-center justify-between px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gray-50 transition-colors focus:outline-none w-full">
+          <span>الخدمات الرقمية</span>
+          <span class="material-symbols-outlined text-[20px] transition-transform duration-200 text-gray-400">expand_more</span>
+        </button>
+        <div class="mobile-dropdown-menu hidden flex-col pl-4 pr-6 py-2 gap-1 border-r-2 border-gray-100 mr-4 mb-2">
+          <a href="services.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الخدمات الإلكترونية</a>
+          <a href="tenders.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">العطاءات</a>
+          <a href="jobs.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">وظائف شاغرة</a>
+          <a href="daily-prices.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الأسعار اليومية</a>
+          <a href="reports.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">التقارير الإحصائية</a>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown: التجارة والصناعة -->
+      <div class="flex flex-col">
+        <button class="mobile-dropdown-btn flex items-center justify-between px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gray-50 transition-colors focus:outline-none w-full">
+          <span>التجارة والصناعة</span>
+          <span class="material-symbols-outlined text-[20px] transition-transform duration-200 text-gray-400">expand_more</span>
+        </button>
+        <div class="mobile-dropdown-menu hidden flex-col pl-4 pr-6 py-2 gap-1 border-r-2 border-gray-100 mr-4 mb-2">
+          <a href="export-import.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">التصدير والاستيراد</a>
+          <a href="industrial-development.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">إدارة التنمية الصناعية</a>
+          <a href="agreements.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الاتفاقيات الدولية</a>
+          <a href="commercial-agencies.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الوكالات التجارية</a>
+          <a href="foreign-company-branch.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">فروع الشركات الأجنبية</a>
+          <a href="foreign-company-rep-office.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">مكاتب تمثيل الشركات الأجنبية</a>
+          <a href="foreign-companies-license.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">رخص الشركات الأجنبية</a>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown: حماية المستهلك والعلامات -->
+      <div class="flex flex-col">
+        <button class="mobile-dropdown-btn flex items-center justify-between px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gray-50 transition-colors focus:outline-none w-full">
+          <span>حماية المستهلك</span>
+          <span class="material-symbols-outlined text-[20px] transition-transform duration-200 text-gray-400">expand_more</span>
+        </button>
+        <div class="mobile-dropdown-menu hidden flex-col pl-4 pr-6 py-2 gap-1 border-r-2 border-gray-100 mr-4 mb-2">
+          <a href="consumer-rights.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الحقوق الثمانية للمستهلك</a>
+          <a href="codex-alimentarius.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">هيئة الدستور الغذائي</a>
+          <a href="trademark-registration.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">تسجيل العلامة التجارية</a>
+          <a href="trademark-ownership-transfer.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">انتقال ملكية العلامة</a>
+          <a href="products-services-classification.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">تصنيف المنتجات والخدمات</a>
+          <a href="trademark-documentary-cycle.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الدورة المستندية للعلامات</a>
+          <a href="trademark-faq.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">أسئلة شائعة - العلامات التجارية</a>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown: التشريعات -->
+      <div class="flex flex-col">
+        <button class="mobile-dropdown-btn flex items-center justify-between px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gray-50 transition-colors focus:outline-none w-full">
+          <span>التشريعات</span>
+          <span class="material-symbols-outlined text-[20px] transition-transform duration-200 text-gray-400">expand_more</span>
+        </button>
+        <div class="mobile-dropdown-menu hidden flex-col pl-4 pr-6 py-2 gap-1 border-r-2 border-gray-100 mr-4 mb-2">
+          <a href="laws.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">القوانين والقرارات</a>
+          <a href="industrial-regulation-law.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">قانون التنظيم الصناعي</a>
+          <a href="trademark-law.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">قانون العلامة التجارية</a>
+        </div>
+      </div>
+
+      <a href="media.html" class="px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">المركز الإعلامي</a>
+      <a href="contact.html" class="px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">تواصل معنا</a>
+    </nav>
+    
+    <div class="mt-8 pt-6 border-t border-gray-100">
+      <a href="services.html" class="w-full flex items-center justify-center rounded-xl h-12 bg-gold-accent text-white hover:bg-gold-light text-sm font-extrabold transition-all shadow-md hover:shadow-lg">
+        بوابة الخدمات الإلكترونية
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Mobile Menu Logic
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
+    
+    function openMenu() {
+      if(!mobileMenuOverlay) return;
+      mobileMenuOverlay.classList.remove('hidden');
+      // small delay to allow display:block to apply before changing opacity
+      setTimeout(() => {
+        mobileMenuOverlay.classList.remove('opacity-0');
+        mobileMenuOverlay.classList.add('opacity-100');
+        mobileMenuDrawer.classList.remove('translate-x-full');
+        mobileMenuDrawer.classList.add('translate-x-0');
+      }, 10);
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+    
+    function closeMenu() {
+      if(!mobileMenuOverlay) return;
+      mobileMenuOverlay.classList.remove('opacity-100');
+      mobileMenuOverlay.classList.add('opacity-0');
+      mobileMenuDrawer.classList.remove('translate-x-0');
+      mobileMenuDrawer.classList.add('translate-x-full');
+      setTimeout(() => {
+        mobileMenuOverlay.classList.add('hidden');
+      }, 300);
+      document.body.style.overflow = '';
+    }
+
+    if(mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMenu);
+    if(closeMobileMenuBtn) closeMobileMenuBtn.addEventListener('click', closeMenu);
+    if(mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMenu);
+
+    // Mobile Dropdowns Toggle
+    const dropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
+    dropdownBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const menu = this.nextElementSibling;
+        const icon = this.querySelector('.material-symbols-outlined');
+        if (menu.classList.contains('hidden')) {
+          menu.classList.remove('hidden');
+          menu.classList.add('flex');
+          icon.classList.add('rotate-180');
+          icon.classList.add('text-gov-blue-dark');
+          this.classList.add('text-gov-blue-dark');
+        } else {
+          menu.classList.add('hidden');
+          menu.classList.remove('flex');
+          icon.classList.remove('rotate-180');
+          icon.classList.remove('text-gov-blue-dark');
+          this.classList.remove('text-gov-blue-dark');
+        }
+      });
+    });
+  });
+</script>
+</header><main class="w-full pt-[7.5rem] bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="relative bg-header-charcoal text-surface-container-lowest overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+<svg class="w-full h-full" fill="none" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+<pattern height="48" id="grid-pattern" patternunits="userSpaceOnUse" width="48">
+<path d="M 48 0 L 0 0 0 48" fill="none" stroke="currentColor" stroke-width="0.75"></path>
+<circle cx="24" cy="24" fill="currentColor" opacity="0.4" r="1.5"></circle>
+</pattern>
+<rect fill="url(#grid-pattern)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<div class="relative max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-2xl">
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-label-md text-label-md text-surface-variant mb-space-lg">
+<a class="hover:text-gold-accent transition-colors flex items-center gap-space-2xs" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>
+<span>الرئيسية</span>
+</a>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_left</span>
+<span class="text-surface-variant">عن الوزارة</span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_left</span>
+<span aria-current="page" class="text-gold-accent font-semibold">وظائف شاغرة</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+<div class="lg:col-span-8 flex flex-col gap-space-sm">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-gold-accent/15 text-gold-light font-label-sm text-label-sm w-fit">
+<span class="w-2 h-2 rounded-full bg-gold-accent animate-pulse"></span>
+<span>بوابة التوظيف الحكومي الموحد</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-surface-container-lowest font-extrabold tracking-tight">
+            بوابة التوظيف والفرص الوظيفية الشاغرة
+          </h1>
+<p class="font-body-lg text-body-lg text-surface-variant max-w-3xl leading-relaxed">
+            منظومة استقطاب وتعيين الكفاءات الوطنية الشابة والمتخصصة للعمل بمختلف إدارات ومكاتب وزارة الاقتصاد والتجارة والمؤسسات التابعة لها وفق مبادئ الجدارة والنزاهة وتكافؤ الفرص.
+          </p>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-space-sm">
+<div class="bg-header-darker/80 p-space-lg rounded-xl shadow-md">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-surface-variant">حالة مسار التوظيف الحالي</span>
+<span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded-full bg-teal-accent/20 text-teal-light font-semibold">مفتوح للمواطنين</span>
+</div>
+<div class="flex items-baseline gap-space-xs text-surface-container-lowest mb-space-sm">
+<span class="text-3xl font-bold text-gold-accent">5</span>
+<span class="font-body-sm text-body-sm text-surface-variant">شواغر تخصصية معلنة للعام 2025</span>
+</div>
+<div class="w-full bg-surface-variant/20 rounded-full h-1.5 overflow-hidden">
+<div class="bg-gold-accent h-full w-3/5 rounded-full"></div>
+</div>
+<p class="font-label-sm text-label-sm text-text-secondary mt-space-xs flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[15px] text-gold-light">verified_user</span>
+<span>جميع المسابقات تخضع للمطابقة بالرقم الوطني</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop -mt-8 relative z-10 w-full mb-space-2xl">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex items-start gap-space-md transition-all hover:shadow-xl">
+<div class="w-12 h-12 rounded-lg bg-gov-blue-tint text-gov-blue-dark flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">assignment_turned_in</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">1. شروط ومستندات التقديم</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-2xs leading-relaxed">
+            الرقم الوطني الفعّال، المؤهل العلمي المعتمد من وزارة التعليم العالي، وسيرة ذاتية حديثة بصيغة PDF.
+          </p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex items-start gap-space-md transition-all hover:shadow-xl">
+<div class="w-12 h-12 rounded-lg bg-primary-container/20 text-gold-accent flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">psychology</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">2. المفاضلة والاختبارات</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-2xs leading-relaxed">
+            تخضع الترشيحات لاختبارات كفاءة تحريرية متخصصة ومقابلات شخصية أمام لجان فنية محايدة.
+          </p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex items-start gap-space-md transition-all hover:shadow-xl">
+<div class="w-12 h-12 rounded-lg bg-teal-accent/15 text-teal-accent flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">gavel</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">3. الشفافية وحق التظلم</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-2xs leading-relaxed">
+            تُنشر نتائج الفرز الأولي علناً وتُفتح فترة 7 أيام لتلقي الطعون الإدارية قبل الاعتماد النهائي للقرارات.
+          </p>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop w-full mb-space-2xl">
+<div class="bg-surface-container-lowest rounded-xl shadow-md p-space-lg lg:p-space-xl">
+<div class="flex items-center justify-between mb-space-lg pb-space-sm bg-surface-container-low/40 -mx-space-lg lg:-mx-space-xl px-space-lg lg:px-space-xl -mt-space-lg lg:-mt-space-xl pt-space-lg rounded-t-xl">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-gov-blue-dark">tune</span>
+<span class="font-headline-sm text-headline-sm font-bold">تصفية وبحث الشواغر الوظيفية</span>
+</div>
+<button class="text-text-secondary hover:text-error transition-colors font-label-md text-label-md flex items-center gap-space-2xs" id="resetFilters">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>إعادة ضبط المعايير</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="searchInput">المسمى الوظيفي أو الكلمة المفتاحية</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low pl-space-md pr-10 py-space-xs rounded-lg text-on-surface font-body-sm text-body-sm focus:bg-surface-container-lowest focus:outline-none transition-all placeholder:text-text-secondary" id="searchInput" placeholder="مثال: باحث، مبرمج، مدقق..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-text-secondary text-[20px] pointer-events-none">search</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="deptSelect">الإدارة أو القطاع التابع</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low px-space-md py-space-xs rounded-lg text-on-surface font-body-sm text-body-sm focus:bg-surface-container-lowest focus:outline-none appearance-none transition-all" id="deptSelect">
+<option value="">جميع الإدارات والمكاتب</option>
+<option value="dept-industrial">إدارة التنمية الصناعية</option>
+<option value="dept-foreign">إدارة التجارة الخارجية</option>
+<option value="dept-admin-finance">إدارة الشؤون الإدارية والمالية</option>
+<option value="dept-it">مركز التوثيق والمعلومات</option>
+<option value="dept-legal">الإدارة القانونية</option>
+</select>
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-text-secondary text-[20px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="contractSelect">نوع التعاقد</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low px-space-md py-space-xs rounded-lg text-on-surface font-body-sm text-body-sm focus:bg-surface-container-lowest focus:outline-none appearance-none transition-all" id="contractSelect">
+<option value="">جميع أنواع التعاقد</option>
+<option value="permanent">تعيين دائم (الملاك الوظيفي)</option>
+<option value="consultant">عقود خبراء ومستشارين</option>
+<option value="training">برامج تدريب وتأهيل الخريجين</option>
+</select>
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-text-secondary text-[20px] pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-2xs">
+<label class="font-label-md text-label-md text-on-surface font-semibold" for="citySelect">المدينة / النطاق الجغرافي</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low px-space-md py-space-xs rounded-lg text-on-surface font-body-sm text-body-sm focus:bg-surface-container-lowest focus:outline-none appearance-none transition-all" id="citySelect">
+<option value="">كافة المدن والمناطق</option>
+<option value="tripoli">طرابلس (ديوان الوزارة)</option>
+<option value="benghazi">بنغازي (فرع الوزارة)</option>
+<option value="misrata">مصراتة (فرع المنطقة الوسطى)</option>
+<option value="sebha">سبها (فرع المنطقة الجنوبية)</option>
+</select>
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-text-secondary text-[20px] pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-space-md mt-space-lg pt-space-md bg-surface-container-low/20 -mx-space-lg lg:-mx-space-xl px-space-lg lg:px-space-xl -mb-space-lg lg:-mb-space-xl pb-space-lg rounded-b-xl">
+<div class="flex items-center gap-space-xs text-text-secondary font-body-sm text-body-sm">
+<span>نتائج البحث الحالية:</span>
+<span class="px-space-xs py-0.5 rounded bg-gov-blue-tint text-gov-blue-dark font-bold" id="resultsCounter">5 وظائف متوفرة</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="bg-gov-blue-dark hover:bg-gov-blue-light text-surface-container-lowest px-space-lg py-space-xs rounded-lg font-label-md text-label-md flex items-center gap-space-2xs shadow-sm transition-all" id="searchSubmitBtn">
+<span class="material-symbols-outlined text-[18px]">search</span>
+<span>بحث في الشواغر</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop w-full mb-space-3xl">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">جدول الشواغر الوظيفية المعتمدة</h2>
+<p class="font-body-sm text-body-sm text-text-secondary">انقر على تفاصيل الوظيفة للاطلاع على بطاقة الوصف الوظيفي والشروط المعيارية</p>
+</div>
+<div class="hidden sm:flex items-center gap-space-2xs bg-surface-container-low p-1 rounded-lg">
+<button class="px-space-sm py-1 rounded bg-surface-container-lowest text-gov-blue-dark font-label-sm text-label-sm shadow-sm flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">table_rows</span>
+<span>عرض جدولي</span>
+</button>
+<button class="px-space-sm py-1 rounded text-text-secondary hover:text-on-surface font-label-sm text-label-sm flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-[16px]">grid_view</span>
+<span>عرض بطاقات</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-md overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-surface-container-high text-on-surface font-label-md text-label-md">
+<th class="py-space-md px-space-lg">رقم الإعلان</th>
+<th class="py-space-md px-space-md">المسمى الوظيفي والموقع</th>
+<th class="py-space-md px-space-md">الإدارة التابعة</th>
+<th class="py-space-md px-space-md">المؤهل الأكاديمي</th>
+<th class="py-space-md px-space-md">الفترة الزمنية للتقديم</th>
+<th class="py-space-md px-space-md">الحالة</th>
+<th class="py-space-md px-space-lg text-center">الإجراءات</th>
+</tr>
+</thead>
+<tbody class="divide-y-0" id="vacanciesTableBody">
+<tr class="hover:bg-surface-container-low/60 transition-colors group bg-surface-container-lowest">
+<td class="py-space-lg px-space-lg font-label-sm text-label-sm text-text-secondary whitespace-nowrap">
+<span class="px-space-xs py-1 rounded bg-surface-container font-mono text-on-surface">VAC-2025-014</span>
+</td>
+<td class="py-space-lg px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-gov-blue-dark transition-colors">باحث اقتصادي أول</span>
+<div class="flex items-center gap-space-xs text-text-secondary font-label-sm text-label-sm mt-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>طرابلس - ديوان الوزارة</span>
+<span class="text-outline-variant">•</span>
+<span class="text-teal-accent font-semibold">تعيين دائم</span>
+</div>
+</div>
+</td>
+<td class="py-space-lg px-space-md font-body-sm text-body-sm text-on-surface">
+<span>إدارة التجارة الخارجية</span>
+<span class="block text-text-secondary font-label-sm text-label-sm">قسم السياسات والاتفاقيات الدولية</span>
+</td>
+<td class="py-space-lg px-space-md font-body-sm text-body-sm text-on-surface">
+<span>ماجستير في العلوم الاقتصادية</span>
+<span class="block text-text-secondary font-label-sm text-label-sm">خبرة عملية لا تقل عن 5 سنوات</span>
+</td>
+<td class="py-space-lg px-space-md font-label-sm text-label-sm">
+<div class="flex flex-col gap-0.5">
+<span class="text-text-secondary">البدء: <strong class="text-on-surface">15 يناير 2025</strong></span>
+<span class="text-error font-medium">الانتهاء: <strong>10 فبراير 2025</strong></span>
+</div>
+</td>
+<td class="py-space-lg px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-space-xs py-1 rounded-full bg-teal-accent/15 text-teal-accent font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-teal-accent"></span>
+<span>متاح للتقديم الآن</span>
+</span>
+</td>
+<td class="py-space-lg px-space-lg text-center whitespace-nowrap">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="p-2 rounded-lg text-text-secondary hover:text-gold-accent hover:bg-surface-container transition-colors" title="تحميل بطاقة الوصف الوظيفي PDF">
+<span class="material-symbols-outlined text-[20px]">download_for_offline</span>
+</button>
+<button class="bg-gov-blue-dark hover:bg-gov-blue-light text-surface-container-lowest px-space-sm py-1.5 rounded-lg font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1">
+<span>تقديم إلكتروني</span>
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors group bg-surface-container-low/30">
+<td class="py-space-lg px-space-lg font-label-sm text-label-sm text-text-secondary whitespace-nowrap">
+<span class="px-space-xs py-1 rounded bg-surface-container font-mono text-on-surface">VAC-2025-018</span>
+</td>
+<td class="py-space-lg px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-gov-blue-dark transition-colors">مبرمج نظم وقواعد بيانات حكومية</span>
+<div class="flex items-center gap-space-xs text-text-secondary font-label-sm text-label-sm mt-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>طرابلس - الإدارة العامة</span>
+<span class="text-outline-variant">•</span>
+<span class="text-gov-blue-dark font-semibold">عقد خبير / مستشار</span>
+</div>
+</div>
+</td>
+<td class="py-space-lg px-space-md font-body-sm text-body-sm text-on-surface">
+<span>مركز التوثيق والمعلومات</span>
+<span class="block text-text-secondary font-label-sm text-label-sm">وحدة الربط البيني والتحول الرقمي</span>
+</td>
+<td class="py-space-lg px-space-md font-body-sm text-body-sm text-on-surface">
+<span>بكالوريوس هندسة برمجيات / حاسوب</span>
+<span class="block text-text-secondary font-label-sm text-label-sm">إتقان نظم PostgreSQL و SQL</span>
+</td>
+<td class="py-space-lg px-space-md font-label-sm text-label-sm">
+<div class="flex flex-col gap-0.5">
+<span class="text-text-secondary">البدء: <strong class="text-on-surface">18 يناير 2025</strong></span>
+<span class="text-error font-medium">الانتهاء: <strong>15 فبراير 2025</strong></span>
+</div>
+</td>
+<td class="py-space-lg px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-space-xs py-1 rounded-full bg-teal-accent/15 text-teal-accent font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-teal-accent"></span>
+<span>متاح للتقديم الآن</span>
+</span>
+</td>
+<td class="py-space-lg px-space-lg text-center whitespace-nowrap">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="p-2 rounded-lg text-text-secondary hover:text-gold-accent hover:bg-surface-container transition-colors" title="تحميل بطاقة الوصف الوظيفي PDF">
+<span class="material-symbols-outlined text-[20px]">download_for_offline</span>
+</button>
+<button class="bg-gov-blue-dark hover:bg-gov-blue-light text-surface-container-lowest px-space-sm py-1.5 rounded-lg font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1">
+<span>تقديم إلكتروني</span>
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors group bg-surface-container-lowest">
+<td class="py-space-lg px-space-lg font-label-sm text-label-sm text-text-secondary whitespace-nowrap">
+<span class="px-space-xs py-1 rounded bg-surface-container font-mono text-on-surface">VAC-2025-021</span>
+</td>
+<td class="py-space-lg px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-gov-blue-dark transition-colors">مدقق مالي ومحاسبي</span>
+<div class="flex items-center gap-space-xs text-text-secondary font-label-sm text-label-sm mt-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>بنغازي - فرع الوزارة</span>
+<span class="text-outline-variant">•</span>
+<span class="text-teal-accent font-semibold">تعيين دائم</span>
+</div>
+</div>
+</td>
+<td class="py-space-lg px-space-md font-body-sm text-body-sm text-on-surface">
+<span>إدارة الشؤون الإدارية والمالية</span>
+<span class="block text-text-secondary font-label-sm text-label-sm">مكتب المراجعة والرقابة المالية</span>
+</td>
+<td class="py-space-lg px-space-md font-body-sm text-body-sm text-on-surface">
+<span>بكالوريوس محاسبة مالية</span>
+<span class="block text-text-secondary font-label-sm text-label-sm">يفضل حملة الزمالة المهنية الليبية</span>
+</td>
+<td class="py-space-lg px-space-md font-label-sm text-label-sm">
+<div class="flex flex-col gap-0.5">
+<span class="text-text-secondary">البدء: <strong class="text-on-surface">20 يناير 2025</strong></span>
+<span class="text-error font-medium">الانتهاء: <strong>20 فبراير 2025</strong></span>
+</div>
+</td>
+<td class="py-space-lg px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-space-xs py-1 rounded-full bg-teal-accent/15 text-teal-accent font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-teal-accent"></span>
+<span>متاح للتقديم الآن</span>
+</span>
+</td>
+<td class="py-space-lg px-space-lg text-center whitespace-nowrap">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="p-2 rounded-lg text-text-secondary hover:text-gold-accent hover:bg-surface-container transition-colors" title="تحميل بطاقة الوصف الوظيفي PDF">
+<span class="material-symbols-outlined text-[20px]">download_for_offline</span>
+</button>
+<button class="bg-gov-blue-dark hover:bg-gov-blue-light text-surface-container-lowest px-space-sm py-1.5 rounded-lg font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1">
+<span>تقديم إلكتروني</span>
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors group bg-surface-container-low/30">
+<td class="py-space-lg px-space-lg font-label-sm text-label-sm text-text-secondary whitespace-nowrap">
+<span class="px-space-xs py-1 rounded bg-surface-container font-mono text-on-surface">VAC-2025-025</span>
+</td>
+<td class="py-space-lg px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold group-hover:text-gov-blue-dark transition-colors">أخصائي رقابة جودة ومواصفات</span>
+<div class="flex items-center gap-space-xs text-text-secondary font-label-sm text-label-sm mt-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>مصراتة - فرع المنطقة الوسطى</span>
+<span class="text-outline-variant">•</span>
+<span class="text-teal-accent font-semibold">تعيين دائم</span>
+</div>
+</div>
+</td>
+<td class="py-space-lg px-space-md font-body-sm text-body-sm text-on-surface">
+<span>إدارة التنمية الصناعية</span>
+<span class="block text-text-secondary font-label-sm text-label-sm">قسم المعايير والمطابقة الصناعية</span>
+</td>
+<td class="py-space-lg px-space-md font-body-sm text-body-sm text-on-surface">
+<span>بكالوريوس هندسة صناعية أو كيميائية</span>
+<span class="block text-text-secondary font-label-sm text-label-sm">معرفة بأنظمة الأيزو والمواصفات</span>
+</td>
+<td class="py-space-lg px-space-md font-label-sm text-label-sm">
+<div class="flex flex-col gap-0.5">
+<span class="text-text-secondary">البدء: <strong class="text-on-surface">22 يناير 2025</strong></span>
+<span class="text-error font-medium">الانتهاء: <strong>18 فبراير 2025</strong></span>
+</div>
+</td>
+<td class="py-space-lg px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-space-xs py-1 rounded-full bg-teal-accent/15 text-teal-accent font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-teal-accent"></span>
+<span>متاح للتقديم الآن</span>
+</span>
+</td>
+<td class="py-space-lg px-space-lg text-center whitespace-nowrap">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="p-2 rounded-lg text-text-secondary hover:text-gold-accent hover:bg-surface-container transition-colors" title="تحميل بطاقة الوصف الوظيفي PDF">
+<span class="material-symbols-outlined text-[20px]">download_for_offline</span>
+</button>
+<button class="bg-gov-blue-dark hover:bg-gov-blue-light text-surface-container-lowest px-space-sm py-1.5 rounded-lg font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1">
+<span>تقديم إلكتروني</span>
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low/60 transition-colors group bg-surface-container-lowest opacity-85">
+<td class="py-space-lg px-space-lg font-label-sm text-label-sm text-text-secondary whitespace-nowrap">
+<span class="px-space-xs py-1 rounded bg-surface-container font-mono text-on-surface">VAC-2024-092</span>
+</td>
+<td class="py-space-lg px-space-md">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">باحث قانوني تجاري</span>
+<div class="flex items-center gap-space-xs text-text-secondary font-label-sm text-label-sm mt-1">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span>طرابلس - ديوان الوزارة</span>
+<span class="text-outline-variant">•</span>
+<span class="text-text-secondary font-medium">عقد سنوي متجدد</span>
+</div>
+</div>
+</td>
+<td class="py-space-lg px-space-md font-body-sm text-body-sm text-on-surface">
+<span>الإدارة القانونية</span>
+<span class="block text-text-secondary font-label-sm text-label-sm">قسم صياغة التشريعات والاتفاقيات</span>
+</td>
+<td class="py-space-lg px-space-md font-body-sm text-body-sm text-on-surface">
+<span>ليسانس قانون / حقوق</span>
+<span class="block text-text-secondary font-label-sm text-label-sm">معرفة بالقوانين التجارية الدولية</span>
+</td>
+<td class="py-space-lg px-space-md font-label-sm text-label-sm">
+<div class="flex flex-col gap-0.5">
+<span class="text-text-secondary">البدء: <strong>01 ديسمبر 2024</strong></span>
+<span class="text-text-secondary">انتهى: <strong>31 ديسمبر 2024</strong></span>
+</div>
+</td>
+<td class="py-space-lg px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-space-xs py-1 rounded-full bg-surface-container-high text-text-secondary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span>انتهى موعد التقديم</span>
+</span>
+</td>
+<td class="py-space-lg px-space-lg text-center whitespace-nowrap">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="p-2 rounded-lg text-text-secondary hover:text-on-surface hover:bg-surface-container transition-colors" title="أرشيف الوصف الوظيفي">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+</button>
+<button class="bg-surface-container text-text-secondary px-space-sm py-1.5 rounded-lg font-label-sm text-label-sm cursor-not-allowed" disabled="">
+                    مغلق للأرشفة
+                  </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="bg-surface-container-low/40 p-space-md flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="font-body-sm text-body-sm text-text-secondary">
+          عرض <span class="font-bold text-on-surface">1 - 5</span> من إجمالي <span class="font-bold text-on-surface">18</span> وظيفة معلنة (سارية ومؤرشفة)
+        </div>
+<div class="flex items-center gap-1">
+<button class="w-9 h-9 rounded-lg flex items-center justify-center text-text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" title="الصفحة السابقة">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+<button class="w-9 h-9 rounded-lg bg-gov-blue-dark text-surface-container-lowest font-label-md text-label-md font-bold shadow-sm">1</button>
+<button class="w-9 h-9 rounded-lg text-text-secondary hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors">2</button>
+<button class="w-9 h-9 rounded-lg text-text-secondary hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors">3</button>
+<span class="w-9 h-9 flex items-center justify-center text-text-secondary">...</span>
+<button class="w-9 h-9 rounded-lg text-text-secondary hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors">4</button>
+<button class="w-9 h-9 rounded-lg flex items-center justify-center text-text-secondary hover:bg-surface-container hover:text-on-surface transition-colors" title="الصفحة التالية">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop w-full mb-space-3xl">
+<div class="bg-gradient-to-r from-gov-blue-dark via-gov-blue-light to-secondary text-surface-container-lowest p-space-xl rounded-2xl shadow-lg relative overflow-hidden">
+<div class="absolute -left-12 -bottom-12 w-64 h-64 rounded-full bg-surface-container-lowest/10 pointer-events-none blur-2xl"></div>
+<div class="absolute -right-8 -top-8 w-48 h-48 rounded-full bg-gold-accent/20 pointer-events-none blur-xl"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-8 flex items-start gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-surface-container-lowest/15 flex items-center justify-center text-gold-light shrink-0">
+<span class="material-symbols-outlined text-[32px]">folder_special</span>
+</div>
+<div class="flex flex-col">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-lowest/20 text-surface-container-lowest font-label-sm text-label-sm w-fit mb-1 font-semibold">تنبيه الكفاءات والكوادر الليبية</span>
+<h3 class="font-headline-lg text-headline-lg text-surface-container-lowest font-bold">لم تجد الشاغر المتوافق مع خبراتك وتخصصك؟</h3>
+<p class="font-body-md text-body-md text-surface-container-lowest/80 mt-1 leading-relaxed max-w-2xl">
+              سجّل بياناتك وسيرتك المهنية في «قاعدة بيانات الكفاءات الوطنية الاحتياطية». سنقوم بمطابقة ملفك والتواصل معك فور استحداث وظائف أو تكليفات استشارية تتناسب مع مسارك المهني.
+            </p>
+</div>
+</div>
+<div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-space-xs justify-end">
+<button class="bg-gold-accent hover:bg-gold-light text-on-primary-fixed px-space-lg py-space-sm rounded-lg font-label-lg text-label-lg font-bold shadow-md transition-all flex items-center justify-center gap-space-2xs">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span>التسجيل في بنك الكفاءات</span>
+</button>
+<a class="text-surface-container-lowest/90 hover:text-surface-container-lowest font-label-sm text-label-sm text-center py-1 transition-colors flex items-center justify-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">help</span>
+<span>الأسئلة الشائعة حول آلية الاختيار</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop w-full mb-space-3xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center bg-surface-container-lowest p-space-xl rounded-2xl shadow-sm">
+<div class="lg:col-span-4 flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-gold-accent font-bold uppercase tracking-wider">مراحل الشفافية الإدارية</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface font-bold">مسار معالجة طلب التوظيف</h3>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+          تعتمد الوزارة دورة تقييم مؤتمتة وموثقة تضمن العدالة لجميع المتقدمين من مختلف البلديات وفق معايير ديوان الخدمة المدنية.
+        </p>
+<div class="mt-space-md p-space-md rounded-xl bg-surface-container-low flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-gov-blue-dark text-[28px]">lock_clock</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-bold">التشفير والأمان</span>
+<span class="font-label-sm text-label-sm text-text-secondary">بيانات المتقدمين محمية وتستخدم حصراً لأغراض المفاضلة</span>
+</div>
+</div>
+</div>
+<div class="lg:col-span-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-container-low/50 relative overflow-hidden">
+<span class="text-3xl font-extrabold text-gov-blue-dark/20 absolute left-3 top-2 font-mono">01</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">الفرز الآلي الأولي</h4>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+              التحقق من صحة الرقم الوطني، مطابقة التخصص الأكاديمي المطلوب، واستيفاء الحد الأدنى لسنوات الخبرة.
+            </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low/50 relative overflow-hidden">
+<span class="text-3xl font-extrabold text-gov-blue-dark/20 absolute left-3 top-2 font-mono">02</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">الامتحان التحريري التخصصي</h4>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+              اختبار قياس المعارف التخصصية والقدرات التحليلية في مراكز فروع الوزارة بالمناطق بإشراف أكاديمي محايد.
+            </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low/50 relative overflow-hidden">
+<span class="text-3xl font-extrabold text-gov-blue-dark/20 absolute left-3 top-2 font-mono">03</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">المقابلات الشخصية للجان</h4>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+              تقييم السمات القيادية، القدرة على حل المشكلات، والجاهزية الوظيفية للعمل ضمن الفرق الحكومية.
+            </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low/50 relative overflow-hidden">
+<span class="text-3xl font-extrabold text-gov-blue-dark/20 absolute left-3 top-2 font-mono">04</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">القرار والاعتماد الإداري</h4>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+              إصدار قرار التعيين المعتمد وتوقيع العقد الإداري ومباشرة البرنامج التعريفي والتأهيلي للوظيفة.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full bg-surface-container-low py-space-3xl mt-space-xl">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="text-center max-w-2xl mx-auto mb-space-2xl">
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">قنوات المساعدة والاستفسار الرسمية</h2>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">تواصل مباشرة مع المكاتب المختصة بالوزارة لأي استفسارات أو ملاحظات</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<div class="p-space-lg rounded-xl bg-surface-container-lowest flex items-start gap-space-md shadow-md hover:shadow-xl transition-all">
+<div class="w-12 h-12 rounded-lg bg-teal-accent/20 flex items-center justify-center text-teal-accent shrink-0">
+<span class="material-symbols-outlined text-[28px]">report</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">مركز بلاغات المستهلك</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-2xs">تقديم شكاوى ومتابعة أسعار السلع والمخالفات التجارية</p>
+<a class="mt-space-sm font-label-md text-label-md text-teal-light hover:text-teal-accent flex items-center gap-space-2xs font-semibold" href="#">
+<span>تقديم بلاغ فوري</span>
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+</a>
+</div>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container-lowest flex items-start gap-space-md shadow-md hover:shadow-xl transition-all">
+<div class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center text-gold-accent shrink-0">
+<span class="material-symbols-outlined text-[28px]">mark_email_read</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">تواصل مع الوزير</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-2xs">بوابة المقترحات والمظالم المباشرة لديوان السيد الوزير</p>
+<a class="mt-space-sm font-label-md text-label-md text-gold-accent hover:text-gold-light flex items-center gap-space-2xs font-semibold" href="#">
+<span>مراسلة مكتب الوزير</span>
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+</a>
+</div>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container-lowest flex items-start gap-space-md shadow-md hover:shadow-xl transition-all">
+<div class="w-12 h-12 rounded-lg bg-gov-blue-dark/20 flex items-center justify-center text-gov-blue-light shrink-0">
+<span class="material-symbols-outlined text-[28px]">help_center</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">تواصل مع الوزارة</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-space-2xs">خدمة المراجعين والاستفسار عن الإجراءات والمعاملات</p>
+<a class="mt-space-sm font-label-md text-label-md text-gov-blue-light hover:text-gov-blue-dark flex items-center gap-space-2xs font-semibold" href="#">
+<span>الدعم الفني والاستعلام</span>
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('searchInput');
+    const deptSelect = document.getElementById('deptSelect');
+    const contractSelect = document.getElementById('contractSelect');
+    const citySelect = document.getElementById('citySelect');
+    const resetBtn = document.getElementById('resetFilters');
+    const searchBtn = document.getElementById('searchSubmitBtn');
+    const resultsCounter = document.getElementById('resultsCounter');
+    const tableBody = document.getElementById('vacanciesTableBody');
+
+    function applyFilter() {
+      if (!tableBody) return;
+      const rows = tableBody.querySelectorAll('tr');
+      const query = (searchInput?.value || '').trim().toLowerCase();
+      let matchedCount = 0;
+
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        const matches = !query || text.includes(query);
+        if (matches) {
+          row.style.display = '';
+          matchedCount++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      if (resultsCounter) {
+        resultsCounter.textContent = matchedCount + ' وظائف متوفرة';
+      }
+    }
+
+    searchBtn?.addEventListener('click', applyFilter);
+    searchInput?.addEventListener('keyup', function(e) {
+      if (e.key === 'Enter') applyFilter();
+    });
+
+    resetBtn?.addEventListener('click', function () {
+      if (searchInput) searchInput.value = '';
+      if (deptSelect) deptSelect.value = '';
+      if (contractSelect) contractSelect.value = '';
+      if (citySelect) citySelect.value = '';
+      applyFilter();
+    });
+  });
+</script></main><footer class="w-full bg-header-darker text-surface-variant"><div class="bg-header-charcoal py-space-2xl"><div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop"><div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg"><div class="p-space-lg rounded-xl bg-header-darker flex items-start gap-space-md shadow-[0_1px_8px_rgba(0,0,0,0.1)]"><div class="w-12 h-12 rounded-lg bg-teal-accent/20 flex items-center justify-center text-teal-accent shrink-0"><span class="material-symbols-outlined text-[28px]">report</span></div><div class="flex flex-col"><h3 class="font-headline-sm text-headline-sm text-on-primary font-bold">مركز بلاغات المستهلك</h3><p class="font-body-sm text-body-sm text-text-secondary mt-space-2xs">تقديم شكاوى ومتابعة أسعار السلع والمخالفات التجارية</p><a class="mt-space-sm font-label-md text-label-md text-teal-light hover:text-teal-fixed flex items-center gap-space-2xs font-semibold" data-path="consumer-protection" href="#"><span>تقديم بلاغ فوري</span><span class="material-symbols-outlined text-[16px]">arrow_back</span></a></div></div><div class="p-space-lg rounded-xl bg-header-darker flex items-start gap-space-md shadow-[0_1px_8px_rgba(0,0,0,0.1)]"><div class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center text-gold-accent shrink-0"><span class="material-symbols-outlined text-[28px]">mark_email_read</span></div><div class="flex flex-col"><h3 class="font-headline-sm text-headline-sm text-on-primary font-bold">تواصل مع الوزير</h3><p class="font-body-sm text-body-sm text-text-secondary mt-space-2xs">بوابة المقترحات والمظالم المباشرة لديوان السيد الوزير</p><a class="mt-space-sm font-label-md text-label-md text-gold-accent hover:text-gold-light flex items-center gap-space-2xs font-semibold" data-path="contact-minister" href="#"><span>مراسلة مكتب الوزير</span><span class="material-symbols-outlined text-[16px]">arrow_back</span></a></div></div><div class="p-space-lg rounded-xl bg-header-darker flex items-start gap-space-md shadow-[0_1px_8px_rgba(0,0,0,0.1)]"><div class="w-12 h-12 rounded-lg bg-gov-blue-dark/20 flex items-center justify-center text-gov-blue-light shrink-0"><span class="material-symbols-outlined text-[28px]">help_center</span></div><div class="flex flex-col"><h3 class="font-headline-sm text-headline-sm text-on-primary font-bold">تواصل مع الوزارة</h3><p class="font-body-sm text-body-sm text-text-secondary mt-space-2xs">خدمة المراجعين والاستفسار عن الإجراءات والمعاملات</p><a class="mt-space-sm font-label-md text-label-md text-gov-blue-light hover:text-secondary-fixed flex items-center gap-space-2xs font-semibold" data-path="contact-us" href="#"><span>الدعم الفني والاستعلام</span><span class="material-symbols-outlined text-[16px]">arrow_back</span></a></div></div></div></div></div><div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-3xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl"><div class="flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-full bg-gold-accent/20 flex items-center justify-center text-gold-accent"><span class="material-symbols-outlined text-[24px]">account_balance</span></div><div><h4 class="font-headline-sm text-headline-sm text-on-primary font-bold">وزارة الاقتصاد والتجارة</h4><p class="font-label-sm text-label-sm text-gold-accent">دولة ليبيا</p></div></div><p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">البوابة الرقمية الرسمية لإدارة وتنسيق الأنشطة التجارية والاستثمارية وحماية حقوق المستهلكين ودعم التنمية الاقتصادية في دولة ليبيا.</p><div class="flex items-center gap-space-sm mt-space-2xs"><a class="w-8 h-8 rounded bg-header-charcoal flex items-center justify-center text-text-secondary hover:text-gold-accent transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">public</span></a><a class="w-8 h-8 rounded bg-header-charcoal flex items-center justify-center text-text-secondary hover:text-gold-accent transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">campaign</span></a><a class="w-8 h-8 rounded bg-header-charcoal flex items-center justify-center text-text-secondary hover:text-gold-accent transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">alternate_email</span></a></div></div><div class="flex flex-col gap-space-md"><h4 class="font-headline-sm text-headline-sm text-on-primary font-bold">روابط سريعة</h4><ul class="space-y-space-xs font-body-sm text-body-sm"><li class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[14px] text-gold-accent">chevron_left</span><a class="text-text-secondary hover:text-gold-accent transition-colors" data-path="agreements" href="#">الاتفاقيات والمعاهدات التجارية</a></li><li class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[14px] text-gold-accent">chevron_left</span><a class="text-text-secondary hover:text-gold-accent transition-colors" data-path="laws-and-decrees" href="#">القوانين والقرارات الوزارية</a></li><li class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[14px] text-gold-accent">chevron_left</span><a class="text-text-secondary hover:text-gold-accent transition-colors" data-path="reports" href="#">التقارير والمؤشرات الاقتصادية</a></li><li class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[14px] text-gold-accent">chevron_left</span><a class="text-text-secondary hover:text-gold-accent transition-colors" data-path="commercial-registry" href="#">منظومة السجل التجاري العام</a></li><li class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[14px] text-gold-accent">chevron_left</span><a class="text-text-secondary hover:text-gold-accent transition-colors" data-path="contact-us" href="#">مركز الاستعلام الوطني</a></li></ul></div><div class="flex flex-col gap-space-md"><h4 class="font-headline-sm text-headline-sm text-on-primary font-bold">بيانات الاتصال والمقر</h4><ul class="space-y-space-sm font-body-sm text-body-sm text-text-secondary"><li class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-[18px] text-gold-accent shrink-0 mt-0.5">location_on</span><span>شارع السيدي، مبنى وزارة الاقتصاد والتجارة، طرابلس - دولة ليبيا</span></li><li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-gold-accent shrink-0">phone</span><span dir="ltr">+218 (21) 334 2921</span></li><li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-gold-accent shrink-0">mail</span><span dir="ltr">info@economy.gov.ly</span></li><li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-gold-accent shrink-0">support_agent</span><span>الخط الساخن: 1415</span></li></ul></div><div class="flex flex-col gap-space-md"><h4 class="font-headline-sm text-headline-sm text-on-primary font-bold">النشرة الإخبارية الرسمية</h4><p class="font-body-sm text-body-sm text-text-secondary">اشترك لاستلام آخر القرارات الوزارية والمؤشرات التجارية والتقارير الاقتصادية الدورية.</p><div class="flex flex-col gap-space-xs"><input class="w-full bg-header-charcoal px-space-md py-space-xs rounded-lg text-on-primary placeholder:text-text-secondary font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-gold-accent" placeholder="أدخل بريدك الإلكتروني" type="email"/><button class="w-full bg-primary-container text-on-primary font-label-md text-label-md py-space-xs rounded-lg hover:bg-gold-light transition-colors flex items-center justify-center gap-space-2xs font-semibold"><span class="material-symbols-outlined text-[16px]">send</span><span>اشتراك في النشرة</span></button></div></div></div></div><div class="bg-header-charcoal/60 py-space-md"><div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-space-sm text-text-secondary font-label-sm text-label-sm"><p>جميع الحقوق محفوظة © وزارة الاقتصاد والتجارة - دولة ليبيا 2025</p><div class="flex items-center gap-space-md"><a class="hover:text-gold-accent transition-colors" href="#">سياسة الخصوصية</a><a class="hover:text-gold-accent transition-colors" href="#">شروط الاستخدام</a><a class="hover:text-gold-accent transition-colors" href="#">خريطة الموقع</a></div></div></div></footer></body></html>

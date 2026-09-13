@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>الرؤية والرسالة | وزارة الاقتصاد والتجارة - دولة ليبيا</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "border-light": "#E5E5E5",
+            "background": "#f8f9fd",
+            "outline-variant": "#d3c4b4",
+            "surface-dim": "#d8dade",
+            "primary-fixed": "#ffddb1",
+            "surface-subtle": "#F8FAFC",
+            "surface-muted": "#F2F4F7",
+            "inverse-on-surface": "#eff1f5",
+            "primary-fixed-dim": "#efbe76",
+            "primary": "#7c5719",
+            "text-primary": "#1E293B",
+            "tertiary": "#006b5f",
+            "header-charcoal": "#212427",
+            "surface-variant": "#e1e2e6",
+            "on-error-container": "#93000a",
+            "surface-container-highest": "#e1e2e6",
+            "on-secondary-fixed-variant": "#00497d",
+            "gov-blue-light": "#0078A8",
+            "gov-blue-tint": "#EEF5FF",
+            "primary-container": "#c49753",
+            "tertiary-fixed": "#8bf5e3",
+            "on-secondary-container": "#00497e",
+            "teal-light": "#11A99B",
+            "on-tertiary-container": "#003d36",
+            "gold-accent": "#C49753",
+            "teal-accent": "#008C7D",
+            "on-primary-container": "#4b3100",
+            "header-darker": "#181A1B",
+            "on-secondary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "error-container": "#ffdad6",
+            "tertiary-fixed-dim": "#6ed8c7",
+            "surface-container": "#eceef2",
+            "gold-light": "#D0AC75",
+            "on-background": "#191c1f",
+            "surface-tint": "#7c5719",
+            "on-error": "#ffffff",
+            "surface-container-high": "#e7e8ec",
+            "on-primary-fixed-variant": "#614001",
+            "on-tertiary-fixed-variant": "#005047",
+            "gov-blue-dark": "#005B9A",
+            "on-tertiary-fixed": "#00201c",
+            "on-surface-variant": "#4f4539",
+            "secondary": "#1161a0",
+            "secondary-fixed-dim": "#9ecaff",
+            "secondary-fixed": "#d1e4ff",
+            "on-primary-fixed": "#291800",
+            "border-subtle": "#E2E8F0",
+            "tertiary-container": "#41af9f",
+            "surface": "#f8f9fd",
+            "on-tertiary": "#ffffff",
+            "error": "#ba1a1a",
+            "outline": "#817567",
+            "inverse-primary": "#efbe76",
+            "on-secondary-fixed": "#001d36",
+            "secondary-container": "#7dbaff",
+            "on-surface": "#191c1f",
+            "inverse-surface": "#2e3134",
+            "surface-container-low": "#f2f3f7",
+            "surface-bg": "#FFFFFF",
+            "surface-bright": "#f8f9fd",
+            "text-secondary": "#667085",
+            "on-primary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "sans": ["Cairo", "Cairo", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    body {
+      font-family: "Cairo", "Cairo", sans-serif;
+      background-color: #f8f9fd;
+    }
+  </style>
+<style>
+  /* Header layout fix: responsive nav scaling */
+  .site-header-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .site-header-branding {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+    min-width: 0;
+  }
+  .site-header-nav-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    min-width: 0;
+    flex-shrink: 1;
+    flex-wrap: nowrap;
+  }
+  .site-header-desktop-links {
+    display: none;
+    align-items: center;
+    gap: 0.75rem;
+    white-space: nowrap;
+    flex-shrink: 1;
+    min-width: 0;
+    position: relative;
+  }
+  @media (min-width: 1024px) {
+    .site-header-desktop-links {
+      display: flex;
+    }
+  }
+  /* Graceful scaling at different desktop widths */
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .site-header-desktop-links {
+      gap: 0.35rem;
+    }
+    .site-header-desktop-links > a,
+    .site-header-desktop-links > div > button {
+      font-size: 0.75rem;
+      padding-left: 0.125rem;
+      padding-right: 0.125rem;
+    }
+    .site-header-branding h2 {
+      font-size: 0.95rem;
+    }
+  }
+  @media (min-width: 1280px) and (max-width: 1365px) {
+    .site-header-desktop-links {
+      gap: 0.5rem;
+    }
+    .site-header-desktop-links > a,
+    .site-header-desktop-links > div > button {
+      font-size: 0.8125rem;
+    }
+  }
+  @media (min-width: 1366px) {
+    .site-header-desktop-links {
+      gap: 1rem;
+    }
+    .site-header-branding {
+      gap: 1.25rem;
+    }
+  }
+</style>
+</head>
+<body class="bg-background text-on-surface antialiased">
+<!-- TopNavBar (Shared Component) -->
+<div class="relative flex h-auto w-full flex-col bg-[#fbfaf9] group/design-root " style='font-family: "Cairo", "Cairo", sans-serif;'>
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 lg:px-10 flex flex-1 justify-center py-3">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+<header class="site-header-main bg-white border-b border-gray-100 shadow-sm px-4 lg:px-6 py-3 relative z-[100] sticky top-0 w-full rounded-b-xl gap-4 lg:gap-6">
+<!-- Logo / Right Side -->
+<div class="site-header-branding text-[#181510]">
+<a href="index.html" class="flex items-center shrink-0">
+<img src="logo.png.jpeg" alt="شعار وزارة الاقتصاد والتجارة" class="h-12 w-auto object-contain" />
+</a>
+<h2 class="text-gray-900 text-lg sm:text-xl font-extrabold leading-tight tracking-tight hidden sm:block">وزارة الاقتصاد والتجارة</h2>
+<h2 class="text-gray-900 text-lg font-extrabold leading-tight tracking-tight sm:hidden">وزارة الاقتصاد</h2>
+</div>
+
+<!-- Desktop Navigation & Action Buttons -->
+<div class="site-header-nav-actions">
+  <!-- Desktop Links -->
+  <div class="site-header-desktop-links relative z-[110]">
+    <a class="text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors border-b-2 border-transparent hover:border-gov-blue-dark pb-1" href="index.html">الرئيسية</a>
+    <a class="text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors border-b-2 border-transparent hover:border-gov-blue-dark pb-1" href="about.html">عن الوزارة</a>
+    
+    <!-- Dropdown: الخدمات الرقمية -->
+    <div class="group relative inline-block pb-1">
+      <button class="flex items-center gap-1 text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors focus:outline-none">
+        الخدمات الرقمية
+        <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+      </button>
+      <div class="absolute right-0 mt-4 w-56 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden transform origin-top-right group-hover:scale-100 scale-95 ring-1 ring-black ring-opacity-5">
+        <a href="services.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">الخدمات الإلكترونية</a>
+        <a href="tenders.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">العطاءات</a>
+        <a href="jobs.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">وظائف شاغرة</a>
+        <a href="daily-prices.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">الأسعار اليومية</a>
+        <a href="reports.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors font-medium">التقارير الإحصائية</a>
+      </div>
+    </div>
+
+    <!-- Dropdown: التجارة والصناعة -->
+    <div class="group relative inline-block pb-1">
+      <button class="flex items-center gap-1 text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors focus:outline-none">
+        التجارة والصناعة
+        <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+      </button>
+      <div class="absolute right-0 mt-4 w-64 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden transform origin-top-right group-hover:scale-100 scale-95 ring-1 ring-black ring-opacity-5">
+        <a href="export-import.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">التصدير والاستيراد</a>
+        <a href="industrial-development.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">إدارة التنمية الصناعية</a>
+        <a href="agreements.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">الاتفاقيات الدولية</a>
+        <a href="commercial-agencies.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">الوكالات التجارية</a>
+        <a href="foreign-company-branch.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">فروع الشركات الأجنبية</a>
+        <a href="foreign-company-rep-office.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">مكاتب تمثيل الشركات الأجنبية</a>
+        <a href="foreign-companies-license.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors font-medium">رخص الشركات الأجنبية</a>
+      </div>
+    </div>
+
+    <!-- Dropdown: حماية المستهلك والعلامات -->
+    <div class="group relative inline-block pb-1">
+      <button class="flex items-center gap-1 text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors focus:outline-none">
+        حماية المستهلك
+        <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+      </button>
+      <div class="absolute right-0 mt-4 w-64 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden transform origin-top-right group-hover:scale-100 scale-95 ring-1 ring-black ring-opacity-5">
+        <a href="consumer-rights.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">الحقوق الثمانية للمستهلك</a>
+        <a href="codex-alimentarius.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">هيئة الدستور الغذائي</a>
+        <a href="trademark-registration.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">تسجيل العلامة التجارية</a>
+        <a href="trademark-ownership-transfer.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">انتقال ملكية العلامة</a>
+        <a href="products-services-classification.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">تصنيف المنتجات والخدمات</a>
+        <a href="trademark-documentary-cycle.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">الدورة المستندية للعلامات</a>
+        <a href="trademark-faq.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors font-medium">أسئلة شائعة - العلامات التجارية</a>
+      </div>
+    </div>
+
+    <!-- Dropdown: التشريعات -->
+    <div class="group relative inline-block pb-1">
+      <button class="flex items-center gap-1 text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors focus:outline-none">
+        التشريعات
+        <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+      </button>
+      <div class="absolute right-0 mt-4 w-56 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden transform origin-top-right group-hover:scale-100 scale-95 ring-1 ring-black ring-opacity-5">
+        <a href="laws.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">القوانين والقرارات</a>
+        <a href="industrial-regulation-law.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">قانون التنظيم الصناعي</a>
+        <a href="trademark-law.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors font-medium">قانون العلامة التجارية</a>
+      </div>
+    </div>
+
+    <a class="text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors border-b-2 border-transparent hover:border-gov-blue-dark pb-1" href="media.html">المركز الإعلامي</a>
+    <a class="text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors border-b-2 border-transparent hover:border-gov-blue-dark pb-1" href="contact.html">تواصل معنا</a>
+  </div>
+  
+  <div class="flex items-center gap-2">
+    <!-- Desktop Search Icon -->
+    <button class="hidden lg:flex items-center justify-center w-10 h-10 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gov-blue-dark transition-colors focus:outline-none">
+      <span class="material-symbols-outlined">search</span>
+    </button>
+    
+    <a href="services.html" class="hidden sm:flex min-w-[120px] items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gold-accent text-white hover:bg-gold-light text-sm font-bold tracking-[0.015em] transition-all shadow-md hover:shadow-lg">
+      <span class="truncate">الخدمات الإلكترونية</span>
+    </a>
+    
+    <!-- Mobile Menu Hamburger Button -->
+    <button id="mobileMenuBtn" class="flex lg:hidden items-center justify-center w-10 h-10 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors text-gray-700 focus:outline-none ml-1">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</div>
+
+<!-- Mobile Navigation Drawer Overlay (Hidden by Default) -->
+<div id="mobileMenuOverlay" class="fixed inset-0 bg-gray-900/40 backdrop-blur-sm z-[150] hidden opacity-0 transition-opacity duration-300"></div>
+
+<!-- Mobile Navigation Drawer (Hidden by Default) -->
+<div id="mobileMenuDrawer" class="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white z-[200] transform translate-x-full transition-transform duration-300 overflow-y-auto shadow-2xl flex flex-col rounded-l-2xl">
+  <div class="flex items-center justify-between p-5 border-b border-gray-100">
+    <div class="flex items-center gap-3">
+      <img src="logo.png.jpeg" alt="شعار وزارة الاقتصاد والتجارة" class="h-10 w-auto object-contain" />
+      <span class="font-extrabold text-sm text-gray-900">وزارة الاقتصاد والتجارة</span>
+    </div>
+    <button id="closeMobileMenuBtn" class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 hover:bg-gray-100 hover:text-gray-800 transition-colors focus:outline-none">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  
+  <div class="p-5 overflow-y-auto pb-20">
+    <!-- Mobile Search -->
+    <div class="flex w-full items-center rounded-xl h-12 mb-6 bg-gray-50 border border-gray-200 px-3">
+      <span class="material-symbols-outlined text-gray-400">search</span>
+      <input class="w-full bg-transparent border-none text-gray-800 focus:outline-none px-3 font-medium placeholder:text-gray-400 placeholder:font-normal text-sm" placeholder="ابحث هنا..." />
+    </div>
+
+    <nav class="flex flex-col gap-1">
+      <a href="index.html" class="px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الرئيسية</a>
+      <a href="about.html" class="px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">عن الوزارة</a>
+      
+      <!-- Mobile Dropdown: الخدمات الرقمية -->
+      <div class="flex flex-col">
+        <button class="mobile-dropdown-btn flex items-center justify-between px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gray-50 transition-colors focus:outline-none w-full">
+          <span>الخدمات الرقمية</span>
+          <span class="material-symbols-outlined text-[20px] transition-transform duration-200 text-gray-400">expand_more</span>
+        </button>
+        <div class="mobile-dropdown-menu hidden flex-col pl-4 pr-6 py-2 gap-1 border-r-2 border-gray-100 mr-4 mb-2">
+          <a href="services.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الخدمات الإلكترونية</a>
+          <a href="tenders.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">العطاءات</a>
+          <a href="jobs.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">وظائف شاغرة</a>
+          <a href="daily-prices.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الأسعار اليومية</a>
+          <a href="reports.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">التقارير الإحصائية</a>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown: التجارة والصناعة -->
+      <div class="flex flex-col">
+        <button class="mobile-dropdown-btn flex items-center justify-between px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gray-50 transition-colors focus:outline-none w-full">
+          <span>التجارة والصناعة</span>
+          <span class="material-symbols-outlined text-[20px] transition-transform duration-200 text-gray-400">expand_more</span>
+        </button>
+        <div class="mobile-dropdown-menu hidden flex-col pl-4 pr-6 py-2 gap-1 border-r-2 border-gray-100 mr-4 mb-2">
+          <a href="export-import.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">التصدير والاستيراد</a>
+          <a href="industrial-development.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">إدارة التنمية الصناعية</a>
+          <a href="agreements.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الاتفاقيات الدولية</a>
+          <a href="commercial-agencies.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الوكالات التجارية</a>
+          <a href="foreign-company-branch.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">فروع الشركات الأجنبية</a>
+          <a href="foreign-company-rep-office.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">مكاتب تمثيل الشركات الأجنبية</a>
+          <a href="foreign-companies-license.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">رخص الشركات الأجنبية</a>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown: حماية المستهلك والعلامات -->
+      <div class="flex flex-col">
+        <button class="mobile-dropdown-btn flex items-center justify-between px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gray-50 transition-colors focus:outline-none w-full">
+          <span>حماية المستهلك</span>
+          <span class="material-symbols-outlined text-[20px] transition-transform duration-200 text-gray-400">expand_more</span>
+        </button>
+        <div class="mobile-dropdown-menu hidden flex-col pl-4 pr-6 py-2 gap-1 border-r-2 border-gray-100 mr-4 mb-2">
+          <a href="consumer-rights.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الحقوق الثمانية للمستهلك</a>
+          <a href="codex-alimentarius.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">هيئة الدستور الغذائي</a>
+          <a href="trademark-registration.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">تسجيل العلامة التجارية</a>
+          <a href="trademark-ownership-transfer.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">انتقال ملكية العلامة</a>
+          <a href="products-services-classification.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">تصنيف المنتجات والخدمات</a>
+          <a href="trademark-documentary-cycle.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الدورة المستندية للعلامات</a>
+          <a href="trademark-faq.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">أسئلة شائعة - العلامات التجارية</a>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown: التشريعات -->
+      <div class="flex flex-col">
+        <button class="mobile-dropdown-btn flex items-center justify-between px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gray-50 transition-colors focus:outline-none w-full">
+          <span>التشريعات</span>
+          <span class="material-symbols-outlined text-[20px] transition-transform duration-200 text-gray-400">expand_more</span>
+        </button>
+        <div class="mobile-dropdown-menu hidden flex-col pl-4 pr-6 py-2 gap-1 border-r-2 border-gray-100 mr-4 mb-2">
+          <a href="laws.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">القوانين والقرارات</a>
+          <a href="industrial-regulation-law.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">قانون التنظيم الصناعي</a>
+          <a href="trademark-law.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">قانون العلامة التجارية</a>
+        </div>
+      </div>
+
+      <a href="media.html" class="px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">المركز الإعلامي</a>
+      <a href="contact.html" class="px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">تواصل معنا</a>
+    </nav>
+    
+    <div class="mt-8 pt-6 border-t border-gray-100">
+      <a href="services.html" class="w-full flex items-center justify-center rounded-xl h-12 bg-gold-accent text-white hover:bg-gold-light text-sm font-extrabold transition-all shadow-md hover:shadow-lg">
+        بوابة الخدمات الإلكترونية
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Mobile Menu Logic
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
+    
+    function openMenu() {
+      if(!mobileMenuOverlay) return;
+      mobileMenuOverlay.classList.remove('hidden');
+      // small delay to allow display:block to apply before changing opacity
+      setTimeout(() => {
+        mobileMenuOverlay.classList.remove('opacity-0');
+        mobileMenuOverlay.classList.add('opacity-100');
+        mobileMenuDrawer.classList.remove('translate-x-full');
+        mobileMenuDrawer.classList.add('translate-x-0');
+      }, 10);
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+    
+    function closeMenu() {
+      if(!mobileMenuOverlay) return;
+      mobileMenuOverlay.classList.remove('opacity-100');
+      mobileMenuOverlay.classList.add('opacity-0');
+      mobileMenuDrawer.classList.remove('translate-x-0');
+      mobileMenuDrawer.classList.add('translate-x-full');
+      setTimeout(() => {
+        mobileMenuOverlay.classList.add('hidden');
+      }, 300);
+      document.body.style.overflow = '';
+    }
+
+    if(mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMenu);
+    if(closeMobileMenuBtn) closeMobileMenuBtn.addEventListener('click', closeMenu);
+    if(mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMenu);
+
+    // Mobile Dropdowns Toggle
+    const dropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
+    dropdownBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const menu = this.nextElementSibling;
+        const icon = this.querySelector('.material-symbols-outlined');
+        if (menu.classList.contains('hidden')) {
+          menu.classList.remove('hidden');
+          menu.classList.add('flex');
+          icon.classList.add('rotate-180');
+          icon.classList.add('text-gov-blue-dark');
+          this.classList.add('text-gov-blue-dark');
+        } else {
+          menu.classList.add('hidden');
+          menu.classList.remove('flex');
+          icon.classList.remove('rotate-180');
+          icon.classList.remove('text-gov-blue-dark');
+          this.classList.remove('text-gov-blue-dark');
+        }
+      });
+    });
+  });
+</script>
+</header>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Container -->
+<main class="max-w-[1240px] mx-auto px-4 md:px-8 py-6 space-y-12">
+<!-- 1. Breadcrumb Navigation -->
+<nav aria-label="مسار التنقل" class="flex items-center gap-2 text-sm text-text-secondary border-b border-border-light pb-4">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-base">home</span>
+        الرئيسية
+      </a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors" href="#">عن الوزارة</a>
+<span class="text-outline-variant">/</span>
+<span class="font-bold text-on-surface">الرؤية والرسالة</span>
+</nav>
+<!-- 2. Official Header Section -->
+<section class="bg-surface-bg rounded-xl border border-border-subtle p-6 md:p-10 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 w-2 h-full bg-gov-blue-dark"></div>
+<div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+<div class="space-y-3 max-w-3xl">
+<div class="flex flex-wrap items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-gov-blue-tint text-gov-blue-dark border border-gov-blue-light/30">
+<span class="material-symbols-outlined text-sm">verified</span>
+              وثيقة حكومية استراتيجية معتمدة
+            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">calendar_month</span>
+              اعتماد المجلس الاستراتيجي: ربيع 2024
+            </span>
+</div>
+<h1 class="text-3xl md:text-4xl font-extrabold text-header-darker tracking-tight leading-tight">
+            الرؤية والرسالة المؤسسية
+          </h1>
+<p class="text-base md:text-lg text-text-secondary leading-relaxed">
+            التوجه الاستراتيجي لدولة ليبيا نحو بناء اقتصاد وطني متنوع ومستدام، يحرر الطاقات الإنتاجية للقطاع الخاص ويعزز التنافسية الإقليمية والدولية بما يضمن الرفاه المستدام للأجيال القادمة.
+          </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-3 w-full lg:w-auto shrink-0">
+<button class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-gov-blue-dark text-white hover:bg-secondary font-semibold transition-all shadow-sm text-sm">
+<span class="material-symbols-outlined text-lg">download</span>
+            تحميل الإطار الاستراتيجي 2035 (PDF)
+          </button>
+</div>
+</div>
+</section>
+<!-- 3. Vision & Mission Cards Grid -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Card: الرؤية -->
+<article class="relative flex flex-col justify-between rounded-xl bg-surface-bg border-2 border-gold-accent/40 shadow-sm p-8 transition-all hover:shadow-md">
+<div class="absolute -top-4 right-8 bg-gold-accent text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-sm">flag</span>
+          الأفق المستقبلي
+        </div>
+<div class="space-y-6 pt-2">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-xl bg-primary-fixed/40 flex items-center justify-center text-primary shrink-0 border border-primary/20">
+<span class="material-symbols-outlined text-3xl">lightbulb</span>
+</div>
+<div>
+<p class="text-xs font-bold text-primary tracking-wide">المنظور الاستراتيجي لدولة ليبيا</p>
+<h2 class="text-2xl font-bold text-header-charcoal">رؤية الوزارة 2035</h2>
+</div>
+</div>
+<blockquote class="text-lg md:text-xl font-medium text-text-primary leading-relaxed border-r-4 border-gold-accent pr-4 bg-surface-subtle p-4 rounded-l-lg">
+            "اقتصاد وطني متنوع ومستدام يقوده قطاع خاص واعد، وتجارة عادلة تكفل الرفاه والاستقرار لكافة المواطنين في دولة ليبيا بحلول عام 2035."
+          </blockquote>
+<p class="text-sm text-text-secondary leading-relaxed">
+            ترتكز الرؤية على تحويل الاقتصاد الليبي من الاعتماد الأحادي على الموارد النفطية إلى نموذج إنتاجي متعدد الروافد يستثمر الإمكانات الجغرافية وموانئ العبور وريادة الأعمال الوطنية التنافسية.
+          </p>
+</div>
+<div class="pt-6 mt-6 border-t border-border-light flex items-center justify-between">
+<span class="text-xs font-semibold text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-gold-accent">insights</span>
+            مستهدف 2035: زيادة المساهمة غير النفطية بنسبة 35%
+          </span>
+<a class="text-sm font-bold text-gov-blue-dark hover:text-secondary flex items-center gap-1" href="#">
+            تفاصيل الرؤية
+            <span class="material-symbols-outlined text-sm">arrow_back</span>
+</a>
+</div>
+</article>
+<!-- Card: الرسالة -->
+<article class="relative flex flex-col justify-between rounded-xl bg-surface-bg border-2 border-gov-blue-light/40 shadow-sm p-8 transition-all hover:shadow-md">
+<div class="absolute -top-4 right-8 bg-gov-blue-dark text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-sm">task_alt</span>
+          الالتزام المؤسسي
+        </div>
+<div class="space-y-6 pt-2">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-xl bg-gov-blue-tint flex items-center justify-center text-gov-blue-dark shrink-0 border border-gov-blue-light/30">
+<span class="material-symbols-outlined text-3xl">scale</span>
+</div>
+<div>
+<p class="text-xs font-bold text-gov-blue-dark tracking-wide">الواجب والمسؤولية التنظيمية</p>
+<h2 class="text-2xl font-bold text-header-charcoal">رسالة الوزارة</h2>
+</div>
+</div>
+<blockquote class="text-lg md:text-xl font-medium text-text-primary leading-relaxed border-r-4 border-gov-blue-dark pr-4 bg-surface-subtle p-4 rounded-l-lg">
+            "تهيئة بيئة استثمارية وتجارية جاذبة ومحفزة للنمو الاقتصادي، وحماية حقوق المستهلك والمنافسة العادلة، وتشجيع الصادرات غير النفطية من خلال تشريعات حديثة وبنية مؤسسية رقمية متطورة وكفاءات وطنية مؤهلة."
+          </blockquote>
+<p class="text-sm text-text-secondary leading-relaxed">
+            العمل المتواصل لتبسيط وتوحيد كافة الإجراءات التجارية الرقمية، وإرساء مبادئ الشفافية والعدالة وحوكمة الأسواق، ودعم المنشآت المحلية لتكون ركائز قوية للتصدير الإقليمي.
+          </p>
+</div>
+<div class="pt-6 mt-6 border-t border-border-light flex items-center justify-between">
+<span class="text-xs font-semibold text-text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-gov-blue-dark">gavel</span>
+            معيار الالتزام: ميثاق الخدمة والنزاهة الحكومية
+          </span>
+<a class="text-sm font-bold text-gov-blue-dark hover:text-secondary flex items-center gap-1" href="#">
+            ميثاق الخدمة
+            <span class="material-symbols-outlined text-sm">arrow_back</span>
+</a>
+</div>
+</article>
+</section>
+<!-- 4. Strategic Pillars (الركائز والأهداف الاستراتيجية الخمسة) -->
+<section class="space-y-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<span class="text-xs font-bold text-gold-accent uppercase tracking-wider">محاور العمل الأساسية</span>
+<h2 class="text-2xl md:text-3xl font-extrabold text-header-charcoal mt-1">الركائز والأهداف الاستراتيجية الخمسة</h2>
+</div>
+<p class="text-sm text-text-secondary max-w-md">
+          محاور استراتيجية متكاملة تتضافر لتنفيذ التوجه الاقتصادي العام للدولة الليبية وضمان استقرار الأسواق ونهضة الاستثمار.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Pillar 1 -->
+<div class="bg-surface-bg border border-border-subtle rounded-xl p-6 hover:border-gold-accent transition-all shadow-sm flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="w-10 h-10 rounded-lg bg-gold-accent/15 text-gold-accent font-bold flex items-center justify-center text-lg">01</span>
+<span class="material-symbols-outlined text-gold-accent text-2xl">factory</span>
+</div>
+<h3 class="text-lg font-bold text-header-charcoal">تنويع القاعدة الاقتصادية وتفعيل الصناعات الوطنية</h3>
+<p class="text-sm text-text-secondary leading-relaxed">
+              تحفيز القطاعات الإنتاجية غير النفطية مثل الصناعات التحويلية، الزراعة، ومصايد الأسماك لتأمين الاكتفاء الذاتي وتقليل الاستيراد.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-border-light flex items-center text-xs font-semibold text-tertiary">
+<span class="material-symbols-outlined text-base ml-1">check_circle</span>
+            مبادرة تعزيز المنتَج الوطني (صُنع في ليبيا)
+          </div>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface-bg border border-border-subtle rounded-xl p-6 hover:border-gold-accent transition-all shadow-sm flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="w-10 h-10 rounded-lg bg-gov-blue-dark/15 text-gov-blue-dark font-bold flex items-center justify-center text-lg">02</span>
+<span class="material-symbols-outlined text-gov-blue-dark text-2xl">security</span>
+</div>
+<h3 class="text-lg font-bold text-header-charcoal">تطوير منظومة حماية المستهلك وضبط الأسواق ومنع الاحتكار</h3>
+<p class="text-sm text-text-secondary leading-relaxed">
+              تفعيل الرقابة الميدانية الرقمية، وضمان سلامة السلع والأسعار العادلة ومنع الممارسات الاحتكارية لحماية القوة الشرائية للمواطنين.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-border-light flex items-center text-xs font-semibold text-gov-blue-dark">
+<span class="material-symbols-outlined text-base ml-1">check_circle</span>
+            منظومة الرصد السعري والإنذار المبكر
+          </div>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface-bg border border-border-subtle rounded-xl p-6 hover:border-gold-accent transition-all shadow-sm flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="w-10 h-10 rounded-lg bg-tertiary/15 text-tertiary font-bold flex items-center justify-center text-lg">03</span>
+<span class="material-symbols-outlined text-tertiary text-2xl">devices</span>
+</div>
+<h3 class="text-lg font-bold text-header-charcoal">تسهيل إجراءات ممارسة الأعمال والتحول الرقمي الكامل</h3>
+<p class="text-sm text-text-secondary leading-relaxed">
+              أتمتة كافة المعاملات من إصدار السجلات والتراخيص وتجديدها في منصة موحدة تقلص زمن تأسيس الشركات إلى دقائق معدودة.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-border-light flex items-center text-xs font-semibold text-tertiary">
+<span class="material-symbols-outlined text-base ml-1">check_circle</span>
+            بوابة السجل التجاري الإلكتروني الموحد
+          </div>
+</div>
+<!-- Pillar 4 -->
+<div class="bg-surface-bg border border-border-subtle rounded-xl p-6 hover:border-gold-accent transition-all shadow-sm flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="w-10 h-10 rounded-lg bg-secondary/15 text-secondary font-bold flex items-center justify-center text-lg">04</span>
+<span class="material-symbols-outlined text-secondary text-2xl">public</span>
+</div>
+<h3 class="text-lg font-bold text-header-charcoal">تنمية التجارة الخارجية والشراكات الإقليمية والدولية</h3>
+<p class="text-sm text-text-secondary leading-relaxed">
+              تفعيل الاتفاقيات الثنائية والتكتلات الأفريقية والمتوسطية لجعل ليبيا مركز عبور تجاري ولوجستي يربط إفريقيا بأوروبا.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-border-light flex items-center text-xs font-semibold text-secondary">
+<span class="material-symbols-outlined text-base ml-1">check_circle</span>
+            اتفاقية منطقة التجارة الحرة القارية (AfCFTA)
+          </div>
+</div>
+<!-- Pillar 5 -->
+<div class="bg-surface-bg border border-border-subtle rounded-xl p-6 hover:border-gold-accent transition-all shadow-sm flex flex-col justify-between md:col-span-2 lg:col-span-2">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="w-10 h-10 rounded-lg bg-gold-accent/20 text-gold-accent font-bold flex items-center justify-center text-lg">05</span>
+<span class="material-symbols-outlined text-gold-accent text-2xl">rocket_launch</span>
+</div>
+<h3 class="text-lg font-bold text-header-charcoal">تمكين رواد الأعمال والمشروعات الصغرى والمتوسطة</h3>
+<p class="text-sm text-text-secondary leading-relaxed">
+              تقديم التسهيلات الائتمانية وحاضنات الأعمال، وخلق بيئة محفزة للشباب والمبتكرين في كافة البلديات الليبية لرفع مساهمتهم في الناتج المحلي.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-border-light flex items-center text-xs font-semibold text-primary">
+<span class="material-symbols-outlined text-base ml-1">check_circle</span>
+            صندوق دعم وتمويل المشاريع الناشئة والابتكار
+          </div>
+</div>
+</div>
+</section>
+<!-- 5. Corporate Values (القيم المؤسسية) -->
+<section class="bg-surface-subtle border border-border-subtle rounded-xl p-8 space-y-8">
+<div class="text-center max-w-2xl mx-auto space-y-2">
+<span class="text-xs font-bold text-gov-blue-dark uppercase tracking-wider">مبادئنا الحاكمة</span>
+<h2 class="text-2xl md:text-3xl font-extrabold text-header-charcoal">القيم المؤسسية لوزارة الاقتصاد والتجارة</h2>
+<p class="text-sm text-text-secondary">
+          منظومة القيم التي يسترشد بها كافة موظفي الوزارة وتوجه كافة السياسات والخدمات المقدمة للمواطنين وقطاع الأعمال.
+        </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+<div class="bg-surface-bg p-5 rounded-lg border border-border-light text-center space-y-3 hover:shadow-sm">
+<div class="w-12 h-12 mx-auto rounded-full bg-gov-blue-tint text-gov-blue-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">visibility</span>
+</div>
+<h4 class="font-bold text-base text-header-charcoal">الشفافية</h4>
+<p class="text-xs text-text-secondary leading-relaxed">وضوح المعايير والإجراءات وحرية الوصول إلى البيانات والتقارير الاقتصادية المحدثة.</p>
+</div>
+<div class="bg-surface-bg p-5 rounded-lg border border-border-light text-center space-y-3 hover:shadow-sm">
+<div class="w-12 h-12 mx-auto rounded-full bg-primary-fixed/50 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">balance</span>
+</div>
+<h4 class="font-bold text-base text-header-charcoal">النزاهة</h4>
+<p class="text-xs text-text-secondary leading-relaxed">سيادة القانون والعدالة التنافسية وتكافؤ الفرص لكافة الفاعلين الاقتصاديين.</p>
+</div>
+<div class="bg-surface-bg p-5 rounded-lg border border-border-light text-center space-y-3 hover:shadow-sm">
+<div class="w-12 h-12 mx-auto rounded-full bg-teal-accent/15 text-teal-accent flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">speed</span>
+</div>
+<h4 class="font-bold text-base text-header-charcoal">الكفاءة</h4>
+<p class="text-xs text-text-secondary leading-relaxed">سرعة إنجاز المعاملات وجودة المخرجات والاستثمار الأمثل في الموارد المتاحة.</p>
+</div>
+<div class="bg-surface-bg p-5 rounded-lg border border-border-light text-center space-y-3 hover:shadow-sm">
+<div class="w-12 h-12 mx-auto rounded-full bg-secondary-fixed text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">psychology</span>
+</div>
+<h4 class="font-bold text-base text-header-charcoal">الابتكار</h4>
+<p class="text-xs text-text-secondary leading-relaxed">تبني أحدث الحلول التقنية لتطوير وتسهيل المنظومة التجارية والاستثمارية.</p>
+</div>
+<div class="bg-surface-bg p-5 rounded-lg border border-border-light text-center space-y-3 hover:shadow-sm">
+<div class="w-12 h-12 mx-auto rounded-full bg-gold-accent/20 text-gold-accent flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">diversity_3</span>
+</div>
+<h4 class="font-bold text-base text-header-charcoal">المسؤولية المجتمعية</h4>
+<p class="text-xs text-text-secondary leading-relaxed">حماية المستهلك والمحافظة على الاستقرار المعيشي والبيئي لكافة فئات المجتمع.</p>
+</div>
+</div>
+</section>
+<!-- 6. Related Resources Links (روابط ذات صلة) -->
+<section class="space-y-4">
+<h3 class="text-lg font-bold text-header-charcoal flex items-center gap-2">
+<span class="material-symbols-outlined text-gov-blue-dark">share</span>
+        بوابات ومصادر استراتيجية ذات صلة
+      </h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<a class="p-4 rounded-xl bg-surface-bg border border-border-subtle hover:border-gov-blue-light transition-all flex items-center justify-between group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gov-blue-dark text-2xl group-hover:scale-110 transition-transform">account_tree</span>
+<div>
+<p class="font-bold text-sm text-header-charcoal">الهيكل التنظيمي</p>
+<p class="text-xs text-text-secondary">الإدارات والجهات التابعة</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-gov-blue-dark text-base">arrow_back</span>
+</a>
+<a class="p-4 rounded-xl bg-surface-bg border border-border-subtle hover:border-gov-blue-light transition-all flex items-center justify-between group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl group-hover:scale-110 transition-transform">analytics</span>
+<div>
+<p class="font-bold text-sm text-header-charcoal">تقارير الأداء الاستراتيجي</p>
+<p class="text-xs text-text-secondary">المؤشرات السنوية والربعية</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary text-base">arrow_back</span>
+</a>
+<a class="p-4 rounded-xl bg-surface-bg border border-border-subtle hover:border-gov-blue-light transition-all flex items-center justify-between group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-teal-accent text-2xl group-hover:scale-110 transition-transform">gavel</span>
+<div>
+<p class="font-bold text-sm text-header-charcoal">القوانين والقرارات</p>
+<p class="text-xs text-text-secondary">التشريعات الاقتصادية المحدثة</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-teal-accent text-base">arrow_back</span>
+</a>
+<a class="p-4 rounded-xl bg-surface-bg border border-border-subtle hover:border-gov-blue-light transition-all flex items-center justify-between group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gold-accent text-2xl group-hover:scale-110 transition-transform">map</span>
+<div>
+<p class="font-bold text-sm text-header-charcoal">خارطة الاستثمار الوطنية</p>
+<p class="text-xs text-text-secondary">الفرص الاستثمارية بالمناطق</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-gold-accent text-base">arrow_back</span>
+</a>
+</div>
+</section>
+<!-- 7. Unified Contact Cards (بطاقات التواصل الثلاث الموحدة) -->
+<section class="space-y-6 pt-6">
+<div class="border-t border-border-light pt-8">
+<h3 class="text-xl font-bold text-header-charcoal mb-1">قنوات التواصل الحكومية الموحدة</h3>
+<p class="text-sm text-text-secondary">نسعد باستقبال استفساراتكم وبلاغاتكم عبر القنوات الرسمية المعتمدة لوزارة الاقتصاد والتجارة</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Contact Card 1: مركز بلاغات المستهلك -->
+<div class="bg-surface-bg rounded-xl border border-border-subtle p-6 space-y-4 hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="w-2 h-full bg-error absolute top-0 right-0"></div>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">report_problem</span>
+</div>
+<div>
+<h4 class="font-bold text-base text-header-charcoal">مركز بلاغات المستهلك</h4>
+<p class="text-xs text-text-secondary">حماية المستهلك وضبط المخالفات</p>
+</div>
+</div>
+<p class="text-sm text-text-secondary leading-relaxed">
+            لتقديم الشكاوى والبلاغات العاجلة حول تجاوزات الأسعار والغش التجاري أو السلع غير المطابقة للمواصفات.
+          </p>
+<div class="pt-2 flex items-center justify-between">
+<span class="text-base font-extrabold text-error font-mono">1440 (الخط الساخن المجاني)</span>
+<a class="text-xs font-bold text-gov-blue-dark hover:underline flex items-center gap-1" href="#">
+              تقديم بلاغ إلكتروني
+              <span class="material-symbols-outlined text-xs">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Contact Card 2: تواصل مع الوزير -->
+<div class="bg-surface-bg rounded-xl border border-border-subtle p-6 space-y-4 hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="w-2 h-full bg-gold-accent absolute top-0 right-0"></div>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">mail</span>
+</div>
+<div>
+<h4 class="font-bold text-base text-header-charcoal">تواصل مع الوزير</h4>
+<p class="text-xs text-text-secondary">ديوان الوزارة - المراسلات المباشرة</p>
+</div>
+</div>
+<p class="text-sm text-text-secondary leading-relaxed">
+            نافذة مخصصة للمقترحات والمبادرات التنموية الكبرى والشكاوى المرفوعة مباشرة لمكتب السيد وزير الاقتصاد والتجارة.
+          </p>
+<div class="pt-2 flex items-center justify-between">
+<span class="text-xs font-semibold text-text-primary">وزارة الاقتصاد والتجارة - طرابلس</span>
+<a class="text-xs font-bold text-gov-blue-dark hover:underline flex items-center gap-1" href="#">
+              بوابة الديوان
+              <span class="material-symbols-outlined text-xs">arrow_back</span>
+</a>
+</div>
+</div>
+<!-- Contact Card 3: تواصل مع الوزارة -->
+<div class="bg-surface-bg rounded-xl border border-border-subtle p-6 space-y-4 hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="w-2 h-full bg-gov-blue-dark absolute top-0 right-0"></div>
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-gov-blue-tint text-gov-blue-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">contact_support</span>
+</div>
+<div>
+<h4 class="font-bold text-base text-header-charcoal">تواصل مع الوزارة</h4>
+<p class="text-xs text-text-secondary">مركز خدمة المواطنين وقطاع الأعمال</p>
+</div>
+</div>
+<p class="text-sm text-text-secondary leading-relaxed">
+            للاستفسارات الإدارية، شؤون التراخيص، الاستيراد والتصدير، ومتابعة المعاملات الرسمية في مختلف الإدارات.
+          </p>
+<div class="pt-2 flex items-center justify-between">
+<span class="text-sm font-bold text-header-charcoal font-mono">+218 (21) 360-1234</span>
+<a class="text-xs font-bold text-gov-blue-dark hover:underline flex items-center gap-1" href="#">
+              الدعم الفني
+              <span class="material-symbols-outlined text-xs">arrow_back</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Official Footer -->
+<footer class="mt-16 border-t border-border-light bg-surface-bg text-on-surface py-10">
+<div class="max-w-[1240px] mx-auto px-4 md:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gold-accent text-3xl">account_balance</span>
+<div>
+<p class="text-sm font-bold text-header-charcoal">وزارة الاقتصاد والتجارة - حكومة الوحدة الوطنية</p>
+<p class="text-xs text-text-secondary">دولة ليبيا - جميع الحقوق محفوظة © 2024</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-6 text-xs text-text-secondary">
+<a class="hover:text-primary transition-colors" href="#">سياسة الخصوصية</a>
+<a class="hover:text-primary transition-colors" href="#">شروط الاستخدام</a>
+<a class="hover:text-primary transition-colors" href="#">ميثاق البيانات المفتوحة</a>
+<a class="hover:text-primary transition-colors" href="#">خريطة الموقع</a>
+</div>
+</div>
+</footer>
+</body></html>

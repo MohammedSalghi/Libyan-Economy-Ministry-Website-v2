@@ -1,0 +1,27 @@
+{
+  "name": "libecom-ministry-website",
+  "version": "1.0.0",
+  "description": "البوابة الرسمية لوزارة الاقتصاد والتجارة - دولة ليبيا",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site — no build step required'",
+    "preview": "npx serve ."
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "libya",
+    "government",
+    "ministry",
+    "economy",
+    "trade"
+  ],
+  "author": "وزارة الاقتصاد والتجارة",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "install": "^0.13.0",
+    "netlify-cli": "^27.5.2"
+  }
+}

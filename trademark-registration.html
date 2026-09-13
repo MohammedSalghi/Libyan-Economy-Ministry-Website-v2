@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline-variant": "#d3c4b4", "primary-container": "#c49753", "on-tertiary-fixed-variant": "#005047", "header-charcoal": "#212427", "primary-fixed": "#ffddb1", "outline": "#817567", "surface-dim": "#d8dade", "on-secondary": "#ffffff", "surface-bright": "#f8f9fd", "gov-blue-dark": "#005B9A", "surface-variant": "#e1e2e6", "primary-fixed-dim": "#efbe76", "on-secondary-fixed-variant": "#00497d", "gold-accent": "#C49753", "surface-muted": "#F2F4F7", "on-surface": "#191c1f", "text-secondary": "#667085", "on-secondary-container": "#00497e", "tertiary-container": "#41af9f", "error": "#ba1a1a", "on-primary": "#ffffff", "on-tertiary-container": "#003d36", "header-darker": "#181A1B", "on-tertiary-fixed": "#00201c", "tertiary-fixed": "#8bf5e3", "on-error-container": "#93000a", "on-surface-variant": "#4f4539", "text-primary": "#1E293B", "surface": "#f8f9fd", "border-subtle": "#E2E8F0", "secondary-fixed-dim": "#9ecaff", "surface-container-low": "#f2f3f7", "primary": "#7c5719", "surface-subtle": "#F8FAFC", "tertiary": "#006b5f", "inverse-on-surface": "#eff1f5", "on-error": "#ffffff", "secondary": "#1161a0", "on-secondary-fixed": "#001d36", "background": "#f8f9fd", "surface-bg": "#FFFFFF", "on-background": "#191c1f", "surface-tint": "#7c5719", "inverse-surface": "#2e3134", "error-container": "#ffdad6", "on-primary-fixed-variant": "#614001", "gov-blue-light": "#0078A8", "on-tertiary": "#ffffff", "surface-container-highest": "#e1e2e6", "tertiary-fixed-dim": "#6ed8c7", "gov-blue-tint": "#EEF5FF", "secondary-fixed": "#d1e4ff", "teal-accent": "#008C7D", "inverse-primary": "#efbe76", "teal-light": "#11A99B", "on-primary-fixed": "#291800", "surface-container-lowest": "#ffffff", "surface-container": "#eceef2", "gold-light": "#D0AC75", "border-light": "#E5E5E5", "secondary-container": "#7dbaff", "surface-container-high": "#e7e8ec", "on-primary-container": "#4b3100" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "container-max": "80rem", "space-lg": "1.5rem", "gutter-mobile": "1rem", "space-sm": "0.75rem", "gutter-desktop": "1.5rem", "space-2xs": "0.25rem", "space-md": "1rem", "space-xl": "2rem", "space-3xl": "4rem", "space-2xl": "3rem", "space-xs": "0.5rem" }, "fontFamily": { "headline-xl": [ "Cairo" ], "body-lg": [ "Cairo" ], "headline-sm": [ "Cairo" ], "body-sm": [ "Cairo" ], "label-md": [ "Cairo" ], "label-sm": [ "Cairo" ], "headline-xl-mobile": [ "Cairo" ], "display-hero": [ "Cairo" ], "display-hero-mobile": [ "Cairo" ], "label-lg": [ "Cairo" ], "body-md": [ "Cairo" ], "headline-md": [ "Cairo" ], "headline-lg": [ "Cairo" ] }, "fontSize": { "headline-xl": [ "36px", { "lineHeight": "52px", "fontWeight": "700" } ], "body-lg": [ "18px", { "lineHeight": "30px", "fontWeight": "400" } ], "headline-sm": [ "18px", { "lineHeight": "28px", "fontWeight": "600" } ], "body-sm": [ "14px", { "lineHeight": "22px", "fontWeight": "400" } ], "label-md": [ "13px", { "lineHeight": "18px", "fontWeight": "500" } ], "label-sm": [ "11px", { "lineHeight": "16px", "fontWeight": "500" } ], "headline-xl-mobile": [ "26px", { "lineHeight": "38px", "fontWeight": "700" } ], "display-hero": [ "48px", { "lineHeight": "68px", "fontWeight": "800" } ], "display-hero-mobile": [ "32px", { "lineHeight": "46px", "fontWeight": "800" } ], "label-lg": [ "15px", { "lineHeight": "22px", "fontWeight": "600" } ], "body-md": [ "16px", { "lineHeight": "26px", "fontWeight": "400" } ], "headline-md": [ "22px", { "lineHeight": "34px", "fontWeight": "600" } ], "headline-lg": [ "28px", { "lineHeight": "42px", "fontWeight": "700" } ] } } } };</script><style>
+  /* Header layout fix: responsive nav scaling */
+  .site-header-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .site-header-branding {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+    min-width: 0;
+  }
+  .site-header-nav-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    min-width: 0;
+    flex-shrink: 1;
+    flex-wrap: nowrap;
+  }
+  .site-header-desktop-links {
+    display: none;
+    align-items: center;
+    gap: 0.75rem;
+    white-space: nowrap;
+    flex-shrink: 1;
+    min-width: 0;
+    position: relative;
+  }
+  @media (min-width: 1024px) {
+    .site-header-desktop-links {
+      display: flex;
+    }
+  }
+  /* Graceful scaling at different desktop widths */
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .site-header-desktop-links {
+      gap: 0.35rem;
+    }
+    .site-header-desktop-links > a,
+    .site-header-desktop-links > div > button {
+      font-size: 0.75rem;
+      padding-left: 0.125rem;
+      padding-right: 0.125rem;
+    }
+    .site-header-branding h2 {
+      font-size: 0.95rem;
+    }
+  }
+  @media (min-width: 1280px) and (max-width: 1365px) {
+    .site-header-desktop-links {
+      gap: 0.5rem;
+    }
+    .site-header-desktop-links > a,
+    .site-header-desktop-links > div > button {
+      font-size: 0.8125rem;
+    }
+  }
+  @media (min-width: 1366px) {
+    .site-header-desktop-links {
+      gap: 1rem;
+    }
+    .site-header-branding {
+      gap: 1.25rem;
+    }
+  }
+</style>
+</head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="site-header-main bg-white border-b border-gray-100 shadow-sm px-4 lg:px-6 py-3 relative z-[100] sticky top-0 w-full rounded-b-xl gap-4 lg:gap-6">
+<!-- Logo / Right Side -->
+<div class="site-header-branding text-[#181510]">
+<a href="index.html" class="flex items-center shrink-0">
+<img src="logo.png.jpeg" alt="شعار وزارة الاقتصاد والتجارة" class="h-12 w-auto object-contain" />
+</a>
+<h2 class="text-gray-900 text-lg sm:text-xl font-extrabold leading-tight tracking-tight hidden sm:block">وزارة الاقتصاد والتجارة</h2>
+<h2 class="text-gray-900 text-lg font-extrabold leading-tight tracking-tight sm:hidden">وزارة الاقتصاد</h2>
+</div>
+
+<!-- Desktop Navigation & Action Buttons -->
+<div class="site-header-nav-actions">
+  <!-- Desktop Links -->
+  <div class="site-header-desktop-links relative z-[110]">
+    <a class="text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors border-b-2 border-transparent hover:border-gov-blue-dark pb-1" href="index.html">الرئيسية</a>
+    <a class="text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors border-b-2 border-transparent hover:border-gov-blue-dark pb-1" href="about.html">عن الوزارة</a>
+    
+    <!-- Dropdown: الخدمات الرقمية -->
+    <div class="group relative inline-block pb-1">
+      <button class="flex items-center gap-1 text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors focus:outline-none">
+        الخدمات الرقمية
+        <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+      </button>
+      <div class="absolute right-0 mt-4 w-56 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden transform origin-top-right group-hover:scale-100 scale-95 ring-1 ring-black ring-opacity-5">
+        <a href="services.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">الخدمات الإلكترونية</a>
+        <a href="tenders.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">العطاءات</a>
+        <a href="jobs.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">وظائف شاغرة</a>
+        <a href="daily-prices.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">الأسعار اليومية</a>
+        <a href="reports.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors font-medium">التقارير الإحصائية</a>
+      </div>
+    </div>
+
+    <!-- Dropdown: التجارة والصناعة -->
+    <div class="group relative inline-block pb-1">
+      <button class="flex items-center gap-1 text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors focus:outline-none">
+        التجارة والصناعة
+        <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+      </button>
+      <div class="absolute right-0 mt-4 w-64 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden transform origin-top-right group-hover:scale-100 scale-95 ring-1 ring-black ring-opacity-5">
+        <a href="export-import.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">التصدير والاستيراد</a>
+        <a href="industrial-development.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">إدارة التنمية الصناعية</a>
+        <a href="agreements.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">الاتفاقيات الدولية</a>
+        <a href="commercial-agencies.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">الوكالات التجارية</a>
+        <a href="foreign-company-branch.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">فروع الشركات الأجنبية</a>
+        <a href="foreign-company-rep-office.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">مكاتب تمثيل الشركات الأجنبية</a>
+        <a href="foreign-companies-license.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors font-medium">رخص الشركات الأجنبية</a>
+      </div>
+    </div>
+
+    <!-- Dropdown: حماية المستهلك والعلامات -->
+    <div class="group relative inline-block pb-1">
+      <button class="flex items-center gap-1 text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors focus:outline-none">
+        حماية المستهلك
+        <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+      </button>
+      <div class="absolute right-0 mt-4 w-64 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden transform origin-top-right group-hover:scale-100 scale-95 ring-1 ring-black ring-opacity-5">
+        <a href="consumer-rights.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">الحقوق الثمانية للمستهلك</a>
+        <a href="codex-alimentarius.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">هيئة الدستور الغذائي</a>
+        <a href="trademark-registration.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">تسجيل العلامة التجارية</a>
+        <a href="trademark-ownership-transfer.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">انتقال ملكية العلامة</a>
+        <a href="products-services-classification.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">تصنيف المنتجات والخدمات</a>
+        <a href="trademark-documentary-cycle.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">الدورة المستندية للعلامات</a>
+        <a href="trademark-faq.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors font-medium">أسئلة شائعة - العلامات التجارية</a>
+      </div>
+    </div>
+
+    <!-- Dropdown: التشريعات -->
+    <div class="group relative inline-block pb-1">
+      <button class="flex items-center gap-1 text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors focus:outline-none">
+        التشريعات
+        <span class="material-symbols-outlined text-[16px] transition-transform duration-200 group-hover:rotate-180">expand_more</span>
+      </button>
+      <div class="absolute right-0 mt-4 w-56 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden transform origin-top-right group-hover:scale-100 scale-95 ring-1 ring-black ring-opacity-5">
+        <a href="laws.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">القوانين والقرارات</a>
+        <a href="industrial-regulation-law.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark border-b border-gray-50 transition-colors font-medium">قانون التنظيم الصناعي</a>
+        <a href="trademark-law.html" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors font-medium">قانون العلامة التجارية</a>
+      </div>
+    </div>
+
+    <a class="text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors border-b-2 border-transparent hover:border-gov-blue-dark pb-1" href="media.html">المركز الإعلامي</a>
+    <a class="text-gray-700 text-sm font-bold hover:text-gov-blue-dark transition-colors border-b-2 border-transparent hover:border-gov-blue-dark pb-1" href="contact.html">تواصل معنا</a>
+  </div>
+  
+  <div class="flex items-center gap-2">
+    <!-- Desktop Search Icon -->
+    <button class="hidden lg:flex items-center justify-center w-10 h-10 rounded-lg text-gray-600 hover:bg-gray-100 hover:text-gov-blue-dark transition-colors focus:outline-none">
+      <span class="material-symbols-outlined">search</span>
+    </button>
+    
+    <a href="services.html" class="hidden sm:flex min-w-[120px] items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gold-accent text-white hover:bg-gold-light text-sm font-bold tracking-[0.015em] transition-all shadow-md hover:shadow-lg">
+      <span class="truncate">الخدمات الإلكترونية</span>
+    </a>
+    
+    <!-- Mobile Menu Hamburger Button -->
+    <button id="mobileMenuBtn" class="flex lg:hidden items-center justify-center w-10 h-10 rounded-lg bg-gray-100 hover:bg-gray-200 transition-colors text-gray-700 focus:outline-none ml-1">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</div>
+
+<!-- Mobile Navigation Drawer Overlay (Hidden by Default) -->
+<div id="mobileMenuOverlay" class="fixed inset-0 bg-gray-900/40 backdrop-blur-sm z-[150] hidden opacity-0 transition-opacity duration-300"></div>
+
+<!-- Mobile Navigation Drawer (Hidden by Default) -->
+<div id="mobileMenuDrawer" class="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white z-[200] transform translate-x-full transition-transform duration-300 overflow-y-auto shadow-2xl flex flex-col rounded-l-2xl">
+  <div class="flex items-center justify-between p-5 border-b border-gray-100">
+    <div class="flex items-center gap-3">
+      <img src="logo.png.jpeg" alt="شعار وزارة الاقتصاد والتجارة" class="h-10 w-auto object-contain" />
+      <span class="font-extrabold text-sm text-gray-900">وزارة الاقتصاد والتجارة</span>
+    </div>
+    <button id="closeMobileMenuBtn" class="flex items-center justify-center w-10 h-10 rounded-full text-gray-500 hover:bg-gray-100 hover:text-gray-800 transition-colors focus:outline-none">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  
+  <div class="p-5 overflow-y-auto pb-20">
+    <!-- Mobile Search -->
+    <div class="flex w-full items-center rounded-xl h-12 mb-6 bg-gray-50 border border-gray-200 px-3">
+      <span class="material-symbols-outlined text-gray-400">search</span>
+      <input class="w-full bg-transparent border-none text-gray-800 focus:outline-none px-3 font-medium placeholder:text-gray-400 placeholder:font-normal text-sm" placeholder="ابحث هنا..." />
+    </div>
+
+    <nav class="flex flex-col gap-1">
+      <a href="index.html" class="px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الرئيسية</a>
+      <a href="about.html" class="px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">عن الوزارة</a>
+      
+      <!-- Mobile Dropdown: الخدمات الرقمية -->
+      <div class="flex flex-col">
+        <button class="mobile-dropdown-btn flex items-center justify-between px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gray-50 transition-colors focus:outline-none w-full">
+          <span>الخدمات الرقمية</span>
+          <span class="material-symbols-outlined text-[20px] transition-transform duration-200 text-gray-400">expand_more</span>
+        </button>
+        <div class="mobile-dropdown-menu hidden flex-col pl-4 pr-6 py-2 gap-1 border-r-2 border-gray-100 mr-4 mb-2">
+          <a href="services.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الخدمات الإلكترونية</a>
+          <a href="tenders.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">العطاءات</a>
+          <a href="jobs.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">وظائف شاغرة</a>
+          <a href="daily-prices.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الأسعار اليومية</a>
+          <a href="reports.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">التقارير الإحصائية</a>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown: التجارة والصناعة -->
+      <div class="flex flex-col">
+        <button class="mobile-dropdown-btn flex items-center justify-between px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gray-50 transition-colors focus:outline-none w-full">
+          <span>التجارة والصناعة</span>
+          <span class="material-symbols-outlined text-[20px] transition-transform duration-200 text-gray-400">expand_more</span>
+        </button>
+        <div class="mobile-dropdown-menu hidden flex-col pl-4 pr-6 py-2 gap-1 border-r-2 border-gray-100 mr-4 mb-2">
+          <a href="export-import.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">التصدير والاستيراد</a>
+          <a href="industrial-development.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">إدارة التنمية الصناعية</a>
+          <a href="agreements.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الاتفاقيات الدولية</a>
+          <a href="commercial-agencies.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الوكالات التجارية</a>
+          <a href="foreign-company-branch.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">فروع الشركات الأجنبية</a>
+          <a href="foreign-company-rep-office.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">مكاتب تمثيل الشركات الأجنبية</a>
+          <a href="foreign-companies-license.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">رخص الشركات الأجنبية</a>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown: حماية المستهلك والعلامات -->
+      <div class="flex flex-col">
+        <button class="mobile-dropdown-btn flex items-center justify-between px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gray-50 transition-colors focus:outline-none w-full">
+          <span>حماية المستهلك</span>
+          <span class="material-symbols-outlined text-[20px] transition-transform duration-200 text-gray-400">expand_more</span>
+        </button>
+        <div class="mobile-dropdown-menu hidden flex-col pl-4 pr-6 py-2 gap-1 border-r-2 border-gray-100 mr-4 mb-2">
+          <a href="consumer-rights.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الحقوق الثمانية للمستهلك</a>
+          <a href="codex-alimentarius.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">هيئة الدستور الغذائي</a>
+          <a href="trademark-registration.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">تسجيل العلامة التجارية</a>
+          <a href="trademark-ownership-transfer.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">انتقال ملكية العلامة</a>
+          <a href="products-services-classification.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">تصنيف المنتجات والخدمات</a>
+          <a href="trademark-documentary-cycle.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">الدورة المستندية للعلامات</a>
+          <a href="trademark-faq.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">أسئلة شائعة - العلامات التجارية</a>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown: التشريعات -->
+      <div class="flex flex-col">
+        <button class="mobile-dropdown-btn flex items-center justify-between px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gray-50 transition-colors focus:outline-none w-full">
+          <span>التشريعات</span>
+          <span class="material-symbols-outlined text-[20px] transition-transform duration-200 text-gray-400">expand_more</span>
+        </button>
+        <div class="mobile-dropdown-menu hidden flex-col pl-4 pr-6 py-2 gap-1 border-r-2 border-gray-100 mr-4 mb-2">
+          <a href="laws.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">القوانين والقرارات</a>
+          <a href="industrial-regulation-law.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">قانون التنظيم الصناعي</a>
+          <a href="trademark-law.html" class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">قانون العلامة التجارية</a>
+        </div>
+      </div>
+
+      <a href="media.html" class="px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">المركز الإعلامي</a>
+      <a href="contact.html" class="px-4 py-3 rounded-xl text-gray-800 font-bold hover:bg-gov-blue-tint hover:text-gov-blue-dark transition-colors">تواصل معنا</a>
+    </nav>
+    
+    <div class="mt-8 pt-6 border-t border-gray-100">
+      <a href="services.html" class="w-full flex items-center justify-center rounded-xl h-12 bg-gold-accent text-white hover:bg-gold-light text-sm font-extrabold transition-all shadow-md hover:shadow-lg">
+        بوابة الخدمات الإلكترونية
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Mobile Menu Logic
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeMobileMenuBtn = document.getElementById('closeMobileMenuBtn');
+    const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+    const mobileMenuDrawer = document.getElementById('mobileMenuDrawer');
+    
+    function openMenu() {
+      if(!mobileMenuOverlay) return;
+      mobileMenuOverlay.classList.remove('hidden');
+      // small delay to allow display:block to apply before changing opacity
+      setTimeout(() => {
+        mobileMenuOverlay.classList.remove('opacity-0');
+        mobileMenuOverlay.classList.add('opacity-100');
+        mobileMenuDrawer.classList.remove('translate-x-full');
+        mobileMenuDrawer.classList.add('translate-x-0');
+      }, 10);
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+    
+    function closeMenu() {
+      if(!mobileMenuOverlay) return;
+      mobileMenuOverlay.classList.remove('opacity-100');
+      mobileMenuOverlay.classList.add('opacity-0');
+      mobileMenuDrawer.classList.remove('translate-x-0');
+      mobileMenuDrawer.classList.add('translate-x-full');
+      setTimeout(() => {
+        mobileMenuOverlay.classList.add('hidden');
+      }, 300);
+      document.body.style.overflow = '';
+    }
+
+    if(mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMenu);
+    if(closeMobileMenuBtn) closeMobileMenuBtn.addEventListener('click', closeMenu);
+    if(mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMenu);
+
+    // Mobile Dropdowns Toggle
+    const dropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
+    dropdownBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        const menu = this.nextElementSibling;
+        const icon = this.querySelector('.material-symbols-outlined');
+        if (menu.classList.contains('hidden')) {
+          menu.classList.remove('hidden');
+          menu.classList.add('flex');
+          icon.classList.add('rotate-180');
+          icon.classList.add('text-gov-blue-dark');
+          this.classList.add('text-gov-blue-dark');
+        } else {
+          menu.classList.add('hidden');
+          menu.classList.remove('flex');
+          icon.classList.remove('rotate-180');
+          icon.classList.remove('text-gov-blue-dark');
+          this.classList.remove('text-gov-blue-dark');
+        }
+      });
+    });
+  });
+</script>
+</header><main class="w-full pt-[7.5rem] bg-surface min-h-screen"><div class="flex flex-col w-full">
+<section class="relative bg-surface-container-low overflow-hidden pb-space-2xl pt-space-xl">
+<div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/2 -right-40 w-80 h-80 rounded-full bg-gov-blue-dark/5 blur-3xl pointer-events-none"></div>
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop relative z-10">
+<nav class="flex items-center gap-space-xs text-text-secondary font-label-md text-label-md mb-space-lg flex-wrap">
+<a class="hover:text-primary transition-colors flex items-center gap-1" data-path="home" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>
+<span>الرئيسية</span>
+</a>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_left</span>
+<a class="hover:text-primary transition-colors" data-path="services" href="#">خدمات الوزارة</a>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_left</span>
+<span class="text-text-secondary">العلامات التجارية</span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_left</span>
+<span class="text-primary font-bold">تسجيل العلامة التجارية</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-space-xs bg-teal-accent/10 text-teal-accent px-space-md py-space-2xs rounded-full w-fit">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-md text-label-md font-bold">خدمة إلكترونية معتمدة رسميًا</span>
+<span class="w-1.5 h-1.5 rounded-full bg-teal-accent"></span>
+<span class="font-label-sm text-label-sm text-text-secondary">رمز الخدمة: TM-LY-01</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">
+            خدمة تسجيل علامة تجارية وطنية أو دولية
+          </h1>
+<p class="font-body-lg text-body-lg text-text-secondary leading-relaxed">
+            المنظومة الوطنية الموحدة لحماية الأصول الفكرية والتجارية بموجب القانون الليبي رقم (23) لسنة 2010 بشأن النشاط التجاري ولائحته التنفيذية. تتيح الخدمة إيداع وفحص وإشهار العلامات التجارية للمؤسسات وحفظ حقوق الأسبقية القانونية في كافة القطاعات الاقتصادية.
+          </p>
+<div class="mt-space-xs bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center gap-space-xs text-on-surface font-label-lg text-label-lg mb-space-xs">
+<span class="material-symbols-outlined text-gold-accent text-[20px]">groups</span>
+<span class="font-bold">الفئات المستهدفة المؤهلة للتقديم:</span>
+</div>
+<div class="flex flex-wrap gap-space-xs">
+<span class="bg-surface-container-high text-on-surface px-space-sm py-space-2xs rounded font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-gov-blue-dark">corporate_fare</span>
+                الشركات والمصانع الوطنية
+              </span>
+<span class="bg-surface-container-high text-on-surface px-space-sm py-space-2xs rounded font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-gov-blue-dark">rocket_launch</span>
+                رواد الأعمال والأنشطة الفردية
+              </span>
+<span class="bg-surface-container-high text-on-surface px-space-sm py-space-2xs rounded font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-gov-blue-dark">language</span>
+                الشركات الأجنبية ووكلائها المعتمدين في ليبيا
+              </span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md pt-space-xs">
+<a class="inline-flex items-center justify-center gap-space-sm bg-primary-container text-on-primary font-label-lg text-label-lg px-space-xl py-space-md rounded-xl shadow-md hover:bg-gold-light transition-all hover:shadow-lg font-bold" href="#portal-apply">
+<span class="material-symbols-outlined text-[24px]">app_registration</span>
+<span>تقديم طلب تسجيل علامة الآن</span>
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+</a>
+<a class="inline-flex items-center justify-center gap-space-xs bg-surface-container-high hover:bg-surface-container text-on-surface font-label-md text-label-md px-space-lg py-space-md rounded-xl transition-colors" href="#quick-docs">
+<span class="material-symbols-outlined text-[20px] text-primary">download</span>
+<span>تحميل الاستمارات الرسمية</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-4 w-full">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex flex-col gap-space-md relative overflow-hidden">
+<div class="absolute top-0 right-0 left-0 h-1.5 bg-gradient-to-r from-gold-accent via-gov-blue-dark to-teal-accent"></div>
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">بطاقة بيانات الخدمة</span>
+<span class="material-symbols-outlined text-primary text-[24px]">info</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1">
+<span class="text-text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">payments</span>
+                  رسم الإيداع المبدئي
+                </span>
+<span class="font-headline-sm text-headline-sm font-bold text-gov-blue-dark">250 د.ل</span>
+<span class="text-text-secondary font-label-sm text-label-sm">غير شامل النشر والإصدار</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1">
+<span class="text-text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timelapse</span>
+                  زمن المعالجة والبت
+                </span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">15 - 30 يوم</span>
+<span class="text-text-secondary font-label-sm text-label-sm">عمل رسمي للفحص الفني</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1">
+<span class="text-text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">security</span>
+                  الصلاحية القانونية
+                </span>
+<span class="font-headline-sm text-headline-sm font-bold text-teal-accent">10 سنوات</span>
+<span class="text-text-secondary font-label-sm text-label-sm">قابلة للتجديد المستمر</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col gap-1">
+<span class="text-text-secondary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">hub</span>
+                  القنوات المتاحة
+                </span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">رقمي / حضوري</span>
+<span class="text-text-secondary font-label-sm text-label-sm">منظومة الإيداع أو الديوان</span>
+</div>
+</div>
+<div class="bg-gov-blue-tint p-space-sm rounded-lg flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-gov-blue-dark text-[20px] shrink-0 mt-0.5">verified_user</span>
+<p class="font-body-sm text-body-sm text-gov-blue-dark">
+                التسجيل يمنح حق الملكية الحصرية والمانعة للعلامة على كامل الأراضي الليبية وإمكانية الحماية الدولية عبر بروتوكول مدريد.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-2xl w-full">
+<div class="flex flex-col gap-space-lg">
+<div class="bg-surface-container-lowest p-space-xs rounded-xl shadow-sm flex items-center gap-space-xs overflow-x-auto" id="service-tabs" role="tablist">
+<button aria-selected="true" class="tab-btn active-tab flex items-center gap-space-xs px-space-lg py-space-sm rounded-lg font-label-lg text-label-lg transition-all whitespace-nowrap bg-gov-blue-dark text-on-primary" onclick="switchTab('tab-conditions', this)" role="tab">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+<span>1. الشروط والأحكام</span>
+</button>
+<button aria-selected="false" class="tab-btn flex items-center gap-space-xs px-space-lg py-space-sm rounded-lg font-label-lg text-label-lg transition-all whitespace-nowrap text-text-secondary hover:bg-surface-container-low hover:text-on-surface" onclick="switchTab('tab-documents', this)" role="tab">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+<span>2. المستندات المطلوبة</span>
+</button>
+<button aria-selected="false" class="tab-btn flex items-center gap-space-xs px-space-lg py-space-sm rounded-lg font-label-lg text-label-lg transition-all whitespace-nowrap text-text-secondary hover:bg-surface-container-low hover:text-on-surface" onclick="switchTab('tab-steps', this)" role="tab">
+<span class="material-symbols-outlined text-[20px]">route</span>
+<span>3. خطوات تنفيذ الخدمة</span>
+</button>
+<button aria-selected="false" class="tab-btn flex items-center gap-space-xs px-space-lg py-space-sm rounded-lg font-label-lg text-label-lg transition-all whitespace-nowrap text-text-secondary hover:bg-surface-container-low hover:text-on-surface" onclick="switchTab('tab-fees', this)" role="tab">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+<span>4. جدول الرسوم المالية</span>
+</button>
+</div>
+<div class="tab-content-panel block bg-surface-container-lowest p-space-xl rounded-xl shadow-sm" id="tab-conditions">
+<div class="flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold flex items-center gap-space-xs">
+<span class="w-2 h-6 bg-primary-container rounded"></span>
+<span>الشروط والأحكام القانونية المعتمدة للإيداع</span>
+</h2>
+<span class="font-label-sm text-label-sm text-text-secondary bg-surface-container px-space-sm py-1 rounded">القانون 23 / 2010</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary">
+            يشترط لقبول تسجيل العلامة التجارية استيفاء الضوابط الشكلية والموضوعية المقررة بالتشريعات الليبية والمعاهدات الدولية النافذة المصادق عليها:
+          </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-gov-blue-dark/10 text-gov-blue-dark flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">fingerprint</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">التمييز الذاتي والجدة</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                  أن تكون العلامة ذات طابع مميز كافٍ يتيح للمستهلك تمييز منتجات أو خدمات المودع عن غيرها، وألا تكون مطابقة أو مشابهة لعلامة مسجلة أو مشهورة سابقاً.
+                </p>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary-container/20 text-gold-accent flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">policy</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">الأهلية القانونية للمودع</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                  أن يكون طالب التسجيل شخصاً طبيعياً أو اعتبارياً متمتعاً بالأهلية، ومقيداً بالسجل التجاري الليبي ساري الصلاحية أو مسجلاً وفق القوانين الأجنبية ذات الصلة.
+                </p>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-error-container text-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">block</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">عدم مخالفة النظام العام والآداب</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                  ألا تشتمل العلامة على رموز دينية، شعارات رسمية عامة للدولة أو المنظمات، أو أية إشارات خادعة للمستهلك بخصوص مصدر السلعة أو طبيعتها.
+                </p>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-teal-accent/15 text-teal-accent flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">الوكالة الرسمية المعتمدة</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                  في حال تقديم الطلب عبر وكيل أو محامٍ، يجب إرفاق توكيل رسمي مصدق من كاتب العدل وساري الصلاحية، مع التزام الوكيل بالقيد بمكتب حماية الملكية.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-content-panel hidden bg-surface-container-lowest p-space-xl rounded-xl shadow-sm" id="tab-documents">
+<div class="flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold flex items-center gap-space-xs">
+<span class="w-2 h-6 bg-gov-blue-dark rounded"></span>
+<span>قائمة المستندات والوثائق المطلوبة (Checklist)</span>
+</h2>
+<span class="text-teal-accent font-label-md text-label-md flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-[16px]">cloud_upload</span>
+              صيغ مقبولة: PDF, PNG, JPG (بحد أقصى 10MB)
+            </span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary">
+            يرجى التأكد من مسح جميع المستندات الأصلية ضوئياً بجودة عالية وملونة قبل البدء في رفع الطلب عبر البوابة الإلكترونية:
+          </p>
+<div class="space-y-space-sm">
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<input checked="" class="mt-1 w-5 h-5 accent-gov-blue-dark cursor-pointer rounded" id="doc1" type="checkbox"/>
+<label class="flex-1 cursor-pointer" for="doc1">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">نموذج العلامة التجارية الرقمي عالي الدقة</span>
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded font-label-sm text-label-sm">إلزامي للجميع</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+                  صورة واضحة للعلامة (ألوان حقيقية أو أبيض وأسود) بمقاس لا يقل عن 1000x1000 بكسل، متضمنة كافة العناصر اللفظية والشكلية والتصنيف الدولي المطلوب (تصنيف نيس).
+                </p>
+</label>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<input checked="" class="mt-1 w-5 h-5 accent-gov-blue-dark cursor-pointer rounded" id="doc2" type="checkbox"/>
+<label class="flex-1 cursor-pointer" for="doc2">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">صورة مستخرج السجل التجاري العام ساري المفعول</span>
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded font-label-sm text-label-sm">للشركات والمؤسسات</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+                  مستخرج حديث لم يمضِ على إصداره أكثر من 3 أشهر من مصلحة السجل التجاري التابعة للوزارة يثبت وجود النشاط وصفة الممثل القانوني.
+                </p>
+</label>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<input class="mt-1 w-5 h-5 accent-gov-blue-dark cursor-pointer rounded" id="doc3" type="checkbox"/>
+<label class="flex-1 cursor-pointer" for="doc3">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">عقد التأسيس والنظام الأساسي للشركة</span>
+<span class="bg-surface-container text-text-secondary px-2 py-0.5 rounded font-label-sm text-label-sm">للأشخاص الاعتبارية</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+                  نسخة طبق الأصل موثقة ومصدقة توضح غايات الشركة ومجال عملها التجاري وممثلها القانوني المخول بالتوقيع.
+                </p>
+</label>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<input class="mt-1 w-5 h-5 accent-gov-blue-dark cursor-pointer rounded" id="doc4" type="checkbox"/>
+<label class="flex-1 cursor-pointer" for="doc4">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">إثبات الهوية الوطنية أو جواز السفر للمفوض</span>
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded font-label-sm text-label-sm">إلزامي</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+                  صورة البطاقة الشخصية سارية المفعول مع الرقم الوطني للمواطنين الليبيين، أو صورة جواز السفر ساري المفعول للشركاء والوكلاء الأجانب.
+                </p>
+</label>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<input class="mt-1 w-5 h-5 accent-gov-blue-dark cursor-pointer rounded" id="doc5" type="checkbox"/>
+<label class="flex-1 cursor-pointer" for="doc5">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">وكالة رسمية قانونية مصدقة</span>
+<span class="bg-surface-container text-text-secondary px-2 py-0.5 rounded font-label-sm text-label-sm">في حال الإنابة</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+                  إذا قُدم الطلب بواسطة وكيل تسجيل أو محامٍ معتمد، يشترط إرفاق سند وكالة خاص بتسجيل العلامات صادر من محرر عقود رسمي ومعتمد ومترجم في حال وروده بلغة أجنبية.
+                </p>
+</label>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low flex items-start gap-space-sm">
+<input class="mt-1 w-5 h-5 accent-gov-blue-dark cursor-pointer rounded" id="doc6" type="checkbox"/>
+<label class="flex-1 cursor-pointer" for="doc6">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">إيصال سداد الرسم القانوني المبدئي</span>
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded font-label-sm text-label-sm">مستند مالي</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">
+                  إيصال التحويل عبر بوابة الدفع الإلكتروني المعتمدة أو قسيمة الإيداع النقدي بحساب الوزارة لدى مصرف ليبيا المركزي.
+                </p>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-content-panel hidden bg-surface-container-lowest p-space-xl rounded-xl shadow-sm" id="tab-steps">
+<div class="flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold flex items-center gap-space-xs">
+<span class="w-2 h-6 bg-teal-accent rounded"></span>
+<span>مراحل وخطوات إنجاز المعاملة (من الإيداع حتى الشهادة)</span>
+</h2>
+<span class="bg-teal-accent/10 text-teal-accent font-label-md text-label-md px-3 py-1 rounded font-semibold">
+              مسار إجرائي إلكتروني 100%
+            </span>
+</div>
+<div class="relative mt-space-md">
+<div class="hidden md:block absolute top-1/2 right-10 left-10 h-1 bg-surface-container-high -translate-y-1/2 z-0"></div>
+<div class="grid grid-cols-1 md:grid-cols-5 gap-space-md relative z-10">
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col items-center text-center">
+<div class="w-14 h-14 rounded-full bg-gov-blue-dark text-on-primary flex items-center justify-center font-headline-md text-headline-md font-bold mb-space-sm shadow-md">
+                  1
+                </div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1">الفحص المسبق</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                  استعلام استكشافي مجاني بقاعدة البيانات لتجنب التطابق مع العلامات المسجلة.
+                </p>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col items-center text-center">
+<div class="w-14 h-14 rounded-full bg-gov-blue-dark text-on-primary flex items-center justify-center font-headline-md text-headline-md font-bold mb-space-sm shadow-md">
+                  2
+                </div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1">تعبئة النموذج</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                  إدخال بيانات المودع، تحديد فئات تصنيف نيس، ورفع المرفقات والرسوم الرقمية.
+                </p>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col items-center text-center">
+<div class="w-14 h-14 rounded-full bg-gov-blue-dark text-on-primary flex items-center justify-center font-headline-md text-headline-md font-bold mb-space-sm shadow-md">
+                  3
+                </div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1">السداد الإلكتروني</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                  دفع رسم الإيداع المبدئي إلكترونياً واستلام رقم إيداع وطني رسمي مؤرخ بالساعة.
+                </p>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col items-center text-center">
+<div class="w-14 h-14 rounded-full bg-gov-blue-dark text-on-primary flex items-center justify-center font-headline-md text-headline-md font-bold mb-space-sm shadow-md">
+                  4
+                </div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1">الفحص والبت</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                  مراجعة فاحص الملكية الفكرية وإصدار قرار القبول المبدئي أو الرفض المسبب.
+                </p>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col items-center text-center">
+<div class="w-14 h-14 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-headline-md text-headline-md font-bold mb-space-sm shadow-md">
+                  5
+                </div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1">النشر وإصدار الشهادة</h3>
+<p class="font-body-sm text-body-sm text-text-secondary">
+                  النشر بالجريدة الرسمية لمدة 60 يوماً للاعتراض ثم إصدار وثيقة الحماية 10 سنوات.
+                </p>
+</div>
+</div>
+</div>
+<div class="mt-space-md bg-surface-container-low p-space-md rounded-xl flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[28px]">search_check</span>
+<div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">هل تود فحص العلامة قبل تقديم الطلب؟</span>
+<p class="font-body-sm text-body-sm text-text-secondary">محرك بحث السجل الوطني للعلامات للتحقق المسبق من الشبه اللفظي أو الصوتي مجاناً</p>
+</div>
+</div>
+<button class="bg-gov-blue-dark text-on-primary font-label-md text-label-md px-space-lg py-space-sm rounded-lg hover:bg-gov-blue-light transition-colors whitespace-nowrap">
+              تشغيل محرك الفحص المسبق
+            </button>
+</div>
+</div>
+</div>
+<div class="tab-content-panel hidden bg-surface-container-lowest p-space-xl rounded-xl shadow-sm" id="tab-fees">
+<div class="flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold flex items-center gap-space-xs">
+<span class="w-2 h-6 bg-gold-accent rounded"></span>
+<span>جدول الرسوم المالية القانونية المعتمدة</span>
+</h2>
+<span class="text-text-secondary font-label-sm text-label-sm">القرار الوزاري رقم (412) لتنظيم رسوم الملكية التجارية</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="bg-surface-container-high text-on-surface font-label-md text-label-md">
+<th class="p-space-sm rounded-r-lg">المرحلة الإجرائية</th>
+<th class="p-space-sm">الرسم للمؤسسات الوطنية</th>
+<th class="p-space-sm">الرسم للشركات الدولية والأجنبية</th>
+<th class="p-space-sm">السند القانوني</th>
+<th class="p-space-sm rounded-l-lg">طريقة السداد</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm divide-y divide-border-subtle">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-space-sm font-bold text-on-surface">1. رسم إيداع طلب التسجيل المبدئي</td>
+<td class="p-space-sm text-gov-blue-dark font-bold">250 د.ل</td>
+<td class="p-space-sm text-gov-blue-dark font-bold">750 د.ل (أو ما يعادله)</td>
+<td class="p-space-sm text-text-secondary">مادة 45 من اللائحة</td>
+<td class="p-space-sm"><span class="bg-teal-accent/10 text-teal-accent px-2 py-0.5 rounded font-label-sm text-label-sm">دفع إلكتروني فوري</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-space-sm font-bold text-on-surface">2. رسم الفحص الفني والموضوعي للعلامة</td>
+<td class="p-space-sm text-gov-blue-dark font-bold">150 د.ل</td>
+<td class="p-space-sm text-gov-blue-dark font-bold">450 د.ل</td>
+<td class="p-space-sm text-text-secondary">مادة 48 من اللائحة</td>
+<td class="p-space-sm"><span class="bg-teal-accent/10 text-teal-accent px-2 py-0.5 rounded font-label-sm text-label-sm">دفع إلكتروني فوري</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-space-sm font-bold text-on-surface">3. رسم الإشهار والنشر بالجريدة الرسمية للعلامات</td>
+<td class="p-space-sm text-gov-blue-dark font-bold">300 د.ل</td>
+<td class="p-space-sm text-gov-blue-dark font-bold">900 د.ل</td>
+<td class="p-space-sm text-text-secondary">مادة 52 من اللائحة</td>
+<td class="p-space-sm"><span class="bg-surface-container text-text-secondary px-2 py-0.5 rounded font-label-sm text-label-sm">عند صدور القبول</span></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="p-space-sm font-bold text-on-surface">4. رسم إصدار الشهادة النهائية لحماية 10 سنوات</td>
+<td class="p-space-sm text-gov-blue-dark font-bold">500 د.ل</td>
+<td class="p-space-sm text-gov-blue-dark font-bold">1,500 د.ل</td>
+<td class="p-space-sm text-text-secondary">مادة 59 من اللائحة</td>
+<td class="p-space-sm"><span class="bg-surface-container text-text-secondary px-2 py-0.5 rounded font-label-sm text-label-sm">بعد انتهاء فترة الإشهار</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-space-md bg-surface-container-low rounded-xl flex items-center justify-between text-text-secondary font-label-md text-label-md">
+<span>* تضاف نسبة 20% عن كل فئة تصنيف إضافية تابعة لنفس العلامة طبقاً لتصنيف نيس الدولي.</span>
+<span class="font-bold text-on-surface">الرسوم خاضعة للتدقيق المالي الحكومي</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop pb-space-2xl w-full">
+<div class="bg-primary-fixed/20 p-space-lg rounded-xl shadow-sm flex flex-col md:flex-row items-start md:items-center gap-space-md relative overflow-hidden">
+<div class="w-12 h-12 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[26px]">priority_high</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1">
+          تنبيه نظام حق الأسبقية المؤقت للمعارض الدولية (المادة 12 من اللائحة)
+        </h3>
+<p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">
+          إذا كانت علامتك قد عُرضت ضمن المعارض الصناعية أو التجارية الدولية الرسمية المصرح بها داخل ليبيا أو في إحدى الدول الأعضاء في اتفاقية باريس، يحق لك المطالبة بأولوية تاريخ العرض على ألا يتجاوز تاريخ إيداع الطلب الفعلي <strong>ستة أشهر</strong> من تاريخ افتتاح المعرض، مشفوعاً بشهادة رسمية من إدارة المعرض.
+        </p>
+</div>
+<a class="bg-primary-container text-on-primary px-space-md py-space-xs rounded-lg font-label-md text-label-md font-bold hover:bg-gold-light transition-colors whitespace-nowrap" href="#">
+        لوائح حق الأسبقية
+      </a>
+</div>
+</section>
+<section class="bg-surface-container-low py-space-3xl" id="portal-apply">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="bg-surface-container-lowest p-space-xl lg:p-space-2xl rounded-2xl shadow-md">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-2xl items-center">
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<div class="inline-flex items-center gap-space-2xs text-gov-blue-dark font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[20px]">devices</span>
+<span>بوابة الإيداع الإلكتروني المباشر</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface font-extrabold leading-tight">
+              ابدأ إيداع طلبك الرقمي عبر منظومة مكتب العلامات
+            </h2>
+<p class="font-body-md text-body-md text-text-secondary leading-relaxed">
+              يمكنك الآن إتمام كافة المراحل من تعبئة البيانات، فحص الفئات الدولية، رفع التوكيل، وسداد الرسوم برقم موحد للحصول على رقم قيد فوري يحفظ أسبقيتك القانونية.
+            </p>
+<div class="space-y-space-xs pt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-teal-accent text-[20px]">check_circle</span>
+<span>إشعار تلقائي عبر الرسائل النصية والبريد عند كل تغيير بحالة الطلب</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-teal-accent text-[20px]">check_circle</span>
+<span>ربط آلي مع منظومة السجل التجاري للتحقق الفوري من التراخيص</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-teal-accent text-[20px]">check_circle</span>
+<span>شهادة رقمية مؤمنة برمز استجابة سريع (QR) وموقعة إلكترونياً</span>
+</div>
+</div>
+<div class="pt-space-md flex flex-wrap items-center gap-space-md">
+<a class="bg-gov-blue-dark text-on-primary font-label-lg text-label-lg px-space-xl py-space-md rounded-xl hover:bg-gov-blue-light transition-all flex items-center gap-space-xs shadow-md font-bold" href="#">
+<span class="material-symbols-outlined text-[20px]">login</span>
+<span>الدخول لمنظومة إيداع العلامات التجارية</span>
+</a>
+<a class="bg-surface-container-high text-on-surface font-label-lg text-label-lg px-space-lg py-space-md rounded-xl hover:bg-surface-container transition-colors flex items-center gap-space-xs" href="#">
+<span class="material-symbols-outlined text-[20px]">search</span>
+<span>متابعة طلب تم تقديمه مسبقاً</span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-5">
+<div class="bg-surface-subtle p-space-lg rounded-xl shadow-inner flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">إحصائيات مكتب العلامات</span>
+<span class="text-teal-accent font-label-sm text-label-sm bg-teal-accent/10 px-2 py-0.5 rounded font-bold">تحديث شهري</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex flex-col">
+<span class="text-text-secondary font-label-sm text-label-sm">العلامات المودعة 2025</span>
+<span class="font-headline-lg text-headline-lg font-bold text-gov-blue-dark">1,480+</span>
+<span class="text-teal-accent font-label-sm text-label-sm mt-1">↑ 14% عن العام السابق</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex flex-col">
+<span class="text-text-secondary font-label-sm text-label-sm">الشهادات الصادرة</span>
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">942</span>
+<span class="text-teal-accent font-label-sm text-label-sm mt-1">حماية نافذة المفعول</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg flex flex-col gap-space-xs">
+<div class="flex justify-between items-center text-label-md font-bold">
+<span class="text-on-surface">نسبة إنجاز الطلبات الرقمية في الوقت المحدد</span>
+<span class="text-primary font-bold">94.6%</span>
+</div>
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 94.6%"></div>
+</div>
+<span class="text-text-secondary font-label-sm text-label-sm">متوسط زمن الاستجابة المبدئي: 18 يوم عمل</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-2xl w-full" id="quick-docs">
+<div class="flex flex-col gap-space-lg">
+<div class="flex flex-col gap-space-2xs">
+<span class="text-primary font-label-md text-label-md font-bold">نماذج ومراجع الخدمة الرسمية</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-extrabold">تحميل الاستمارات واللوائح التنظيمية</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-error/10 text-error flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[28px]">picture_as_pdf</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1">استمارة طلب التسجيل اليدوي (نموذج أ-1)</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-md">
+              للإيداع الورقي عبر ديوان الوزارة للمتعاملين غير القادرين على استخدام البوابة الرقمية.
+            </p>
+</div>
+<a class="inline-flex items-center justify-between text-gov-blue-dark font-label-md text-label-md font-bold hover:text-gov-blue-light pt-space-sm" href="#">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>تحميل النموذج (PDF - 1.2MB)</span>
+</span>
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+</a>
+</div>
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-gov-blue-dark/10 text-gov-blue-dark flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[28px]">menu_book</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1">دليل شروط ومواصفات العلامات التجارية</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-md">
+              كتيب إرشادي شامل يوضح المعايير الفنية المقبولة والممنوعة والأمثلة التوضيحية للمصممين والمودعين.
+            </p>
+</div>
+<a class="inline-flex items-center justify-between text-gov-blue-dark font-label-md text-label-md font-bold hover:text-gov-blue-light pt-space-sm" href="#">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>تحميل الدليل (PDF - 3.4MB)</span>
+</span>
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+</a>
+</div>
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-teal-accent/10 text-teal-accent flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[28px]">format_list_numbered</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1">جدول تصنيف نيس الدولي (السلع والخدمات)</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mb-space-md">
+              القائمة المعتمدة للفئات الـ 45 من السلع والخدمات لتحديد مجال حماية العلامة التجارية بدقة.
+            </p>
+</div>
+<a class="inline-flex items-center justify-between text-gov-blue-dark font-label-md text-label-md font-bold hover:text-gov-blue-light pt-space-sm" href="#">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>تحميل جدول الفئات (PDF - 850KB)</span>
+</span>
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest py-space-2xl">
+<div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop">
+<div class="text-center max-w-2xl mx-auto mb-space-xl">
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface mb-2">قنوات الدعم والتواصل المباشر</h2>
+<p class="font-body-sm text-body-sm text-text-secondary">فريق الإشراف على مكتب حماية الملكية التجارية والصناعية متاح للإجابة عن التساؤلات الفنية والقانونية</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<div class="bg-surface-container-low p-space-lg rounded-xl flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-gov-blue-dark/15 text-gov-blue-dark flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">support_agent</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">الدعم الفني المباشر</h4>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">المساعدة في تعبئة الطلب ومشاكل الإيداع الإلكتروني</p>
+<div class="mt-space-sm flex flex-col gap-1 font-label-md text-label-md text-gov-blue-dark font-bold">
+<span dir="ltr">+218 (21) 334 2925</span>
+<span class="font-body-sm font-normal text-text-secondary">الأحد - الخميس: 8:30 ص - 2:30 م</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-xl flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-primary-container/20 text-gold-accent flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">apartment</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">ديوان مكتب العلامات</h4>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">مراجعة المعاملات الورقية واستلام الشهادات الأصلية</p>
+<div class="mt-space-sm font-label-sm text-label-sm text-on-surface">
+<span class="font-bold">المقر:</span> طرابلس، شارع السيدي - الدور الثالث، مكتب شؤون الملكية التجارية
+            </div>
+</div>
+</div>
+<div class="bg-surface-container-low p-space-lg rounded-xl flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-teal-accent/15 text-teal-accent flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">mark_email_read</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">المراسلات القانونية</h4>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1">تلقي اعتراضات النشر واستفسارات الوكلاء المعتمدين</p>
+<div class="mt-space-sm flex flex-col gap-1 font-label-md text-label-md text-teal-accent font-bold">
+<span dir="ltr">trademark@economy.gov.ly</span>
+<span class="font-body-sm font-normal text-text-secondary">الرد القانوني خلال 48 ساعة عمل</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  function switchTab(tabId, triggerBtn) {
+    const panels = document.querySelectorAll('.tab-content-panel');
+    panels.forEach(panel => {
+      panel.classList.add('hidden');
+      panel.classList.remove('block');
+    });
+
+    const targetPanel = document.getElementById(tabId);
+    if (targetPanel) {
+      targetPanel.classList.remove('hidden');
+      targetPanel.classList.add('block');
+    }
+
+    const buttons = document.querySelectorAll('#service-tabs .tab-btn');
+    buttons.forEach(btn => {
+      btn.classList.remove('bg-gov-blue-dark', 'text-on-primary', 'active-tab');
+      btn.classList.add('text-text-secondary');
+      btn.setAttribute('aria-selected', 'false');
+    });
+
+    triggerBtn.classList.remove('text-text-secondary');
+    triggerBtn.classList.add('bg-gov-blue-dark', 'text-on-primary', 'active-tab');
+    triggerBtn.setAttribute('aria-selected', 'true');
+  }
+</script></main><footer class="w-full bg-header-darker text-surface-variant"><div class="bg-header-charcoal py-space-2xl"><div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop"><div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg"><div class="p-space-lg rounded-xl bg-header-darker flex items-start gap-space-md shadow-[0_1px_8px_rgba(0,0,0,0.1)]"><div class="w-12 h-12 rounded-lg bg-teal-accent/20 flex items-center justify-center text-teal-accent shrink-0"><span class="material-symbols-outlined text-[28px]">report</span></div><div class="flex flex-col"><h3 class="font-headline-sm text-headline-sm text-on-primary font-bold">مركز بلاغات المستهلك</h3><p class="font-body-sm text-body-sm text-text-secondary mt-space-2xs">تقديم شكاوى ومتابعة أسعار السلع والمخالفات التجارية</p><a class="mt-space-sm font-label-md text-label-md text-teal-light hover:text-teal-fixed flex items-center gap-space-2xs font-semibold" data-path="consumer-protection" href="#"><span>تقديم بلاغ فوري</span><span class="material-symbols-outlined text-[16px]">arrow_back</span></a></div></div><div class="p-space-lg rounded-xl bg-header-darker flex items-start gap-space-md shadow-[0_1px_8px_rgba(0,0,0,0.1)]"><div class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center text-gold-accent shrink-0"><span class="material-symbols-outlined text-[28px]">mark_email_read</span></div><div class="flex flex-col"><h3 class="font-headline-sm text-headline-sm text-on-primary font-bold">تواصل مع الوزير</h3><p class="font-body-sm text-body-sm text-text-secondary mt-space-2xs">بوابة المقترحات والمظالم المباشرة لديوان السيد الوزير</p><a class="mt-space-sm font-label-md text-label-md text-gold-accent hover:text-gold-light flex items-center gap-space-2xs font-semibold" data-path="contact-minister" href="#"><span>مراسلة مكتب الوزير</span><span class="material-symbols-outlined text-[16px]">arrow_back</span></a></div></div><div class="p-space-lg rounded-xl bg-header-darker flex items-start gap-space-md shadow-[0_1px_8px_rgba(0,0,0,0.1)]"><div class="w-12 h-12 rounded-lg bg-gov-blue-dark/20 flex items-center justify-center text-gov-blue-light shrink-0"><span class="material-symbols-outlined text-[28px]">help_center</span></div><div class="flex flex-col"><h3 class="font-headline-sm text-headline-sm text-on-primary font-bold">تواصل مع الوزارة</h3><p class="font-body-sm text-body-sm text-text-secondary mt-space-2xs">خدمة المراجعين والاستفسار عن الإجراءات والمعاملات</p><a class="mt-space-sm font-label-md text-label-md text-gov-blue-light hover:text-secondary-fixed flex items-center gap-space-2xs font-semibold" data-path="contact-us" href="#"><span>الدعم الفني والاستعلام</span><span class="material-symbols-outlined text-[16px]">arrow_back</span></a></div></div></div></div></div><div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop py-space-3xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl"><div class="flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-full bg-gold-accent/20 flex items-center justify-center text-gold-accent"><span class="material-symbols-outlined text-[24px]">account_balance</span></div><div><h4 class="font-headline-sm text-headline-sm text-on-primary font-bold">وزارة الاقتصاد والتجارة</h4><p class="font-label-sm text-label-sm text-gold-accent">دولة ليبيا</p></div></div><p class="font-body-sm text-body-sm text-text-secondary leading-relaxed">البوابة الرقمية الرسمية لإدارة وتنسيق الأنشطة التجارية والاستثمارية وحماية حقوق المستهلكين ودعم التنمية الاقتصادية في دولة ليبيا.</p><div class="flex items-center gap-space-sm mt-space-2xs"><a class="w-8 h-8 rounded bg-header-charcoal flex items-center justify-center text-text-secondary hover:text-gold-accent transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">public</span></a><a class="w-8 h-8 rounded bg-header-charcoal flex items-center justify-center text-text-secondary hover:text-gold-accent transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">campaign</span></a><a class="w-8 h-8 rounded bg-header-charcoal flex items-center justify-center text-text-secondary hover:text-gold-accent transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">alternate_email</span></a></div></div><div class="flex flex-col gap-space-md"><h4 class="font-headline-sm text-headline-sm text-on-primary font-bold">روابط سريعة</h4><ul class="space-y-space-xs font-body-sm text-body-sm"><li class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[14px] text-gold-accent">chevron_left</span><a class="text-text-secondary hover:text-gold-accent transition-colors" data-path="agreements" href="#">الاتفاقيات والمعاهدات التجارية</a></li><li class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[14px] text-gold-accent">chevron_left</span><a class="text-text-secondary hover:text-gold-accent transition-colors" data-path="laws-and-decrees" href="#">القوانين والقرارات الوزارية</a></li><li class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[14px] text-gold-accent">chevron_left</span><a class="text-text-secondary hover:text-gold-accent transition-colors" data-path="reports" href="#">التقارير والمؤشرات الاقتصادية</a></li><li class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[14px] text-gold-accent">chevron_left</span><a class="text-text-secondary hover:text-gold-accent transition-colors" data-path="commercial-registry" href="#">منظومة السجل التجاري العام</a></li><li class="flex items-center gap-space-2xs"><span class="material-symbols-outlined text-[14px] text-gold-accent">chevron_left</span><a class="text-text-secondary hover:text-gold-accent transition-colors" data-path="contact-us" href="#">مركز الاستعلام الوطني</a></li></ul></div><div class="flex flex-col gap-space-md"><h4 class="font-headline-sm text-headline-sm text-on-primary font-bold">بيانات الاتصال والمقر</h4><ul class="space-y-space-sm font-body-sm text-body-sm text-text-secondary"><li class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-[18px] text-gold-accent shrink-0 mt-0.5">location_on</span><span>شارع السيدي، مبنى وزارة الاقتصاد والتجارة، طرابلس - دولة ليبيا</span></li><li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-gold-accent shrink-0">phone</span><span dir="ltr">+218 (21) 334 2921</span></li><li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-gold-accent shrink-0">mail</span><span dir="ltr">info@economy.gov.ly</span></li><li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px] text-gold-accent shrink-0">support_agent</span><span>الخط الساخن: 1415</span></li></ul></div><div class="flex flex-col gap-space-md"><h4 class="font-headline-sm text-headline-sm text-on-primary font-bold">النشرة الإخبارية الرسمية</h4><p class="font-body-sm text-body-sm text-text-secondary">اشترك لاستلام آخر القرارات الوزارية والمؤشرات التجارية والتقارير الاقتصادية الدورية.</p><div class="flex flex-col gap-space-xs"><input class="w-full bg-header-charcoal px-space-md py-space-xs rounded-lg text-on-primary placeholder:text-text-secondary font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-gold-accent" placeholder="أدخل بريدك الإلكتروني" type="email"/><button class="w-full bg-primary-container text-on-primary font-label-md text-label-md py-space-xs rounded-lg hover:bg-gold-light transition-colors flex items-center justify-center gap-space-2xs font-semibold"><span class="material-symbols-outlined text-[16px]">send</span><span>اشتراك في النشرة</span></button></div></div></div></div><div class="bg-header-charcoal/60 py-space-md"><div class="max-w-container-max mx-auto px-gutter-mobile lg:px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-space-sm text-text-secondary font-label-sm text-label-sm"><p>جميع الحقوق محفوظة © وزارة الاقتصاد والتجارة - دولة ليبيا 2025</p><div class="flex items-center gap-space-md"><a class="hover:text-gold-accent transition-colors" href="#">سياسة الخصوصية</a><a class="hover:text-gold-accent transition-colors" href="#">شروط الاستخدام</a><a class="hover:text-gold-accent transition-colors" href="#">خريطة الموقع</a></div></div></div></footer></body></html>
